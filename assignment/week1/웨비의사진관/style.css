@@ -31,6 +31,13 @@ nav ul{
     list-style: none;
     
 }
+.city{
+    text-decoration: none;
+}
+.city:hover{
+    color:blue;
+    text-decoration: underline;
+}
 
 #first{
     display: flex;
