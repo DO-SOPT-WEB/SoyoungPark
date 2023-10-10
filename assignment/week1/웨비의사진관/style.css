@@ -66,6 +66,57 @@ nav ul{
     margin-bottom: 3rem;
 }
 
+#second_images{
+    display:flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+#group2{
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+}
+#group3{
+    display: flex;
+    flex-direction: column;
+}
+#f_item1{
+    width: 600px;
+    height: 600px;
+    background-image: url("images/melbourne2.jpg");
+    background-size: 100% 100%;
+}
+#f_item2{
+    width: 300px;
+    height: 292.5px;
+    background-image: url("images/melbourne1.jpg");
+    background-size: 100% 100%;
+    margin-bottom: 1rem;
+}
+#f_item3{
+    width: 300px;
+    height: 292.5px;
+    background-image: url("images/melbourne10.jpg");
+    background-size: 100% 100%;
+    
+}
+#f_item4{
+    width: 300px;
+    height: 292.5px;
+    background-image: url("images/melbourne11.jpg");
+    background-size: 100% 100%;
+    margin-bottom: 1rem;
+}
+#f_item5{
+    width: 300px;
+    height: 292.5px; 
+    background-image: url("images/melbourne6.jpg");
+    background-size: 100% 100%;
+}
+
 #third{
     display: flex;
     gap:3rem;
