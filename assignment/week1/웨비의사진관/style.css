@@ -12,6 +12,17 @@ header {
     color: white;
     font-size: 20px;
 }
+#preview_container {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 1rem;
+    margin:1rem;
+}
+.image {
+    width: 200px;
+    height: 250px;
+}
 nav ul{
     display: flex;
     gap: 35px;
