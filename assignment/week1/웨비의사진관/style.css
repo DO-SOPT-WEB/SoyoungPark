@@ -18,6 +18,7 @@ header {
     flex-direction: row;
     gap: 1rem;
     margin:1rem;
+    overflow: scroll;
 }
 .image {
     width: 200px;
