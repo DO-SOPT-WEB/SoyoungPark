@@ -29,10 +29,15 @@ nav ul{
     gap: 35px;
     justify-content: center;
     list-style: none;
+    font-size: larger;
     
 }
 .city{
     text-decoration: none;
+    color:rgb(229, 174, 35);
+}
+.city:visited{
+    color:rgb(229, 174, 35);
 }
 .city:hover{
     color:blue;
@@ -183,11 +188,17 @@ nav ul{
     padding-left: 1rem;
 }
 footer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem;
 }
 .material-symbols-outlined{
-    color: white;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
 }
