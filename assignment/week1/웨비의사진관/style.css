@@ -176,6 +176,8 @@ nav ul{
 }
 
 .chapter_container{
+    position: sticky;
+    top: 0;
     background-color: #333;
     color: white;
     padding-left: 1rem;
@@ -185,4 +187,7 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-  }
+}
+.material-symbols-outlined{
+    color: white;
+}
