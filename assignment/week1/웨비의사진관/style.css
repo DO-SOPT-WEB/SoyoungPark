@@ -213,3 +213,9 @@ footer {
     bottom: 25px;
     right: 25px;
 }
+.img_move{
+    transition-duration: 0.5s;
+}
+.img_move:hover{
+    transform: translateY(-10px);
+}
