@@ -68,6 +68,14 @@ header{
     display: flex;
     justify-content: space-between;
 }
+#date_wrapper{
+    display: flex; 
+    gap: 1rem;
+}
+#date_wrapper > p{
+    display: flex;
+    align-items: center;
+}
 #contents_list{
     display: flex; 
     flex-direction: column;
