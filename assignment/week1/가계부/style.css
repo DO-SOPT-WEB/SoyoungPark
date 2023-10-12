@@ -111,3 +111,16 @@ footer > button{
    color: white;
    padding: 0.7rem;
 }
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"]+label{
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 0.6rem;
+    padding: 0.5rem;
+}
+input[type="checkbox"]:checked + label{
+    border: 1px solid rgb(250, 47, 88);
+    background-color: rgb(250, 47, 88);
+    color: white;
+}
