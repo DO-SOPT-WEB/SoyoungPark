@@ -98,6 +98,12 @@ header{
     display: flex;
     gap:1rem
 }
+.where{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:30vw;
+}
 footer{
     display: flex;
     justify-content: center;
