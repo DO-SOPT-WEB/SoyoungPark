@@ -85,8 +85,9 @@ nav ul{
     margin-right:1rem;
 }
 #first_images > img{
-    width: 20vw;
-    height: 25vh;
+    flex-grow: 1;
+    width: 16vw;
+    height: 30vh;
 }
 
 #second{
@@ -233,4 +234,37 @@ footer {
 }
 .img_move:hover{
     transform: translateY(-10px);
+}
+
+@media(max-width: 1100px){
+    #first_images > img{
+        width: 22vw;
+        height: 30vh;
+    }
+    #img_stretch1{
+        width: 40vw;
+        height: 30vh;
+    }
+    #img_stretch2{
+        width: 40vw;
+        height: 30vh;
+    }
+}
+@media(max-width: 900px){
+    #first_images > img{
+        width: 28vw;
+        height: 30vh;
+    }
+}
+@media(max-width: 700px){
+    #first_images > img{
+        width: 40vw;
+        height: 30vh;
+    }
+}
+@media(max-width: 500px){
+    #first_images > img{
+        width: 80vw;
+        height: 30vh;
+    }
 }
