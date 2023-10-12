@@ -40,10 +40,10 @@ header{
     justify-content: center;
     gap: 1rem;
 }
-#income{
+.income{
     color: blue;
 }
-#spending{
+.spending{
     color: red;
 }
 #list{
