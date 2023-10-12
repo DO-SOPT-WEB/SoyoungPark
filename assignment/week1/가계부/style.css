@@ -11,8 +11,6 @@ body{
     flex-direction: column;
     width:100vw;
     gap: 0.7rem;
-    position: fixed;
-    overflow: hidden;
     align-items: center;
 }
 header{
@@ -73,6 +71,8 @@ header{
     gap: 0.5rem;
     padding:0.5rem;
     width: 100%;
+    height: 50vh;
+    overflow: scroll;
 }
 .content{
     display: flex;
