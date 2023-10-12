@@ -81,8 +81,8 @@ nav ul{
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left:1rem;
-    margin-right:1rem;
+    margin-left:2rem;
+    margin-right:2rem;
 }
 #first_images > img{
     width: 16vw;
@@ -99,19 +99,21 @@ nav ul{
 #second_images{
     display:flex;
     flex-direction: row;
-    gap: 1rem;
     justify-content: center;
-    flex-wrap: wrap;
-   
+    gap: 1rem;
+    margin-left:2rem;
+    margin-right:2rem;
+}
+#group1{
+    display: flex;
+    width:50%;
 }
 #group2{
     display: flex;
     gap: 1rem;
     flex-direction: row;
-}
-#group3{
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    width:50%
 }
 #f_item1{
     width: 45vw;
@@ -124,7 +126,6 @@ nav ul{
     height: 35vh;
     background-image: url("images/melbourne1.jpg");
     background-size: 100% 100%;
-    margin-bottom: 1rem;
 }
 #f_item3{
     width: 20vw;
@@ -138,7 +139,6 @@ nav ul{
     height: 35vh;
     background-image: url("images/melbourne11.jpg");
     background-size: 100% 100%;
-    margin-bottom: 1rem;
 }
 #f_item5{
     width: 20vw;
@@ -236,27 +236,58 @@ footer {
     transform: translateY(-10px);
 }
 
-@media(max-width: 1100px){
+@media(max-width: 1024px){
     #first_images > img{
         width: 22vw;
         height: 30vh;
     }
-}
-@media(max-width: 900px){
-    #first_images > img{
-        width: 28vw;
-        height: 30vh;
+    #group1{
+        width:98%;
+    }
+    #group2{
+        width:98%;
+    }
+    #second_images{
+        flex-wrap: wrap;
+    }
+    #f_item1{
+        height:40vh;
+    }
+    #f_item2{
+        width: 25%;
+        height: 26vh;
+    }
+    #f_item4{
+        width: 25%;
+        height: 26vh;
+    }
+    #f_item3{
+        width: 25%;
+        height: 26vh;
     }
 }
-@media(max-width: 700px){
-    #first_images > img{
-        width: 40vw;
-        height: 30vh;
+@media(max-width: 820px){
+    #f_item2{
+        width: 43%;
+        height: 35vh;
+    }
+    #f_item4{
+        width: 43%;
+        height: 35vh;
+    }
+    #f_item3{
+        width: 43%;
+        height: 35vh;
+    }
+    #f_item5{
+        width: 43%;
+        height: 35vh;
     }
 }
-@media(max-width: 500px){
+@media(max-width: 650px){
     #first_images > img{
         width: 80vw;
         height: 30vh;
     }
 }
+
