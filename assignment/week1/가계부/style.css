@@ -67,6 +67,23 @@ header{
     display: flex;
     justify-content: space-between;
 }
+#contents_list{
+    display: flex; 
+    flex-direction: column;
+    gap: 0.5rem;
+    padding:0.5rem;
+    width: 100%;
+}
+.content{
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+}
+.content > div{
+    display: flex;
+    gap:1rem
+}
+
 footer{
     width: 100vw;
     height: 7vh;
