@@ -48,3 +48,22 @@ header{
 #spending{
     color: red;
 }
+#list{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 90vw;
+    height: 60vh;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+#list_header{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+#list_header > div{
+    display: flex;
+    justify-content: space-between;
+}
