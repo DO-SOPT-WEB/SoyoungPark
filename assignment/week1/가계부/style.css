@@ -6,3 +6,45 @@
 body{
     background-color: rgb(245, 245, 245) ;
 }
+#container{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    gap: 0.7rem;
+    position: fixed;
+    overflow: hidden;
+    align-items: center;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 90vw;
+    height: 7vh;
+    margin-top: 0.7rem;
+    background-color: white;
+    border-radius: 0.6rem;
+}
+#asset_box{
+    display:flex;
+    width:90vw;
+    height: 20vh;
+    flex-direction: column;
+    padding:1rem;
+    gap: 1rem;
+    border-radius: 0.6rem;
+    background-color: white;
+    text-align: center;
+}
+#asset_box > div{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+#income{
+    color: blue;
+}
+#spending{
+    color: red;
+}
