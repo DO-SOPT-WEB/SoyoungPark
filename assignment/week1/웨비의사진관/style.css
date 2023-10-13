@@ -26,6 +26,9 @@ header i{
     transform: rotate(-20deg);
     font-size: 20px;
 }
+h2{
+    font-size: 22px;
+}
 #preview_container {
     display:flex;
     width:100vw;
@@ -58,7 +61,7 @@ nav{
 }
 nav ul{
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
     margin: 1rem;
     list-style: none;
     font-size: larger;
@@ -94,7 +97,7 @@ nav ul{
     width:85vw;
 }
 #first_images > img{
-    width: 225px;
+    width: 204px;
     height: 200px;
 }
 
