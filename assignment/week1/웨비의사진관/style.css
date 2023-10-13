@@ -87,13 +87,15 @@ nav ul{
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
+    align-self: center;
     flex-wrap: wrap;
     margin-left:2rem;
     margin-right:2rem;
+    width:85vw;
 }
 #first_images > img{
-    width: 16vw;
-    height: 30vh;
+    width: 225px;
+    height: 200px;
 }
 
 #second{
@@ -120,7 +122,7 @@ nav ul{
     gap: 1rem;
     flex-direction: row;
     flex-wrap: wrap;
-    width:50%
+    width:50%;
 }
 #f_item1{
     width: 45vw;
@@ -243,16 +245,12 @@ footer {
     transform: translateY(-10px);
 }
 
-@media(max-width: 1024px){
-    #first_images > img{
-        width: 22vw;
-        height: 30vh;
-    }
+@media(max-width: 1150px){
     #group1{
-        width:98%;
+        width:95%;
     }
     #group2{
-        width:98%;
+        width:95%;
     }
     #second_images{
         flex-wrap: wrap;
@@ -293,7 +291,7 @@ footer {
 }
 @media(max-width: 650px){
     #first_images > img{
-        width: 80vw;
+        width: 85vw;
         height: 30vh;
     }
 }
