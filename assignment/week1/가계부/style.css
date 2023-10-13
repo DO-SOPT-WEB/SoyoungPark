@@ -10,7 +10,8 @@ body{
     display: flex;
     flex-direction: column;
     width:100vw;
-    gap: 0.7rem;
+    height:100vh;
+    gap: 1.5vh;
     align-items: center;
 }
 header{
@@ -19,7 +20,7 @@ header{
     justify-content: center;
     width: 90vw;
     height: 7vh;
-    margin-top: 0.7rem;
+    margin-top: 1.5vh;
     background-color: white;
     border-radius: 0.6rem;
 }
@@ -133,4 +134,19 @@ input[type="checkbox"]:checked + label{
 }
 .content p{
     font-size: 13px;
+}
+@media(max-height: 740px){
+    #list{
+        height: 58vh;
+    }
+}
+@media(max-height: 700px){
+    #list{
+        height: 56vh;
+    }
+}
+@media(max-height: 600px){
+    #list{
+        height: 53vh;
+    }
 }
