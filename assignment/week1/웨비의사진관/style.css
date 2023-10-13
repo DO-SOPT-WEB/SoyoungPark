@@ -10,7 +10,6 @@ html{
     display: flex;
     flex-direction: column;
     width:100%;
-    overflow-x: hidden;
     gap: 0.7rem;
 }
 header {
@@ -21,6 +20,11 @@ header {
     color: white;
     font-size: 20px;
     height: 7vh;
+    gap:0.5rem;
+}
+header i{
+    transform: rotate(-20deg);
+    font-size: 20px;
 }
 #preview_container {
     display:flex;
