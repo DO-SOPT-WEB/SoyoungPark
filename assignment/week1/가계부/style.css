@@ -3,17 +3,20 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
-:root{
-	--background-color:  rgb(245, 245, 245);
-	--white-color:white;
-	--point-color:rgb(250, 47, 88);
-	--blue-color:blue;
+
+:root {
+	--background-color: rgb(245, 245, 245);
+	--white-color: white;
+	--point-color: rgb(250, 47, 88);
+	--blue-color: blue;
 	--red-color: red;
 	--gray-color: rgb(173, 173, 173);
 }
-html{
+
+html {
 	font-size: 10px;
 }
+
 body {
 	background-color: var(--background-color);
 }
@@ -95,10 +98,12 @@ header {
 	font-size: 16px;
 	margin-bottom: 2rem;
 }
-#list_name{
+
+#list_name {
 	margin-left: 0.5rem;
 	font-size: 14px;
 }
+
 #list_header>div {
 	display: flex;
 	justify-content: space-between;
@@ -107,6 +112,10 @@ header {
 #date_wrapper {
 	display: flex;
 	gap: 1rem;
+}
+
+#date_wrapper>span {
+	cursor: pointer;
 }
 
 #date_wrapper>p {
@@ -130,9 +139,11 @@ header {
 	padding: 0.5rem;
 	justify-content: space-between;
 }
+
 .content p {
 	font-size: 13px;
 }
+
 .content>div {
 	display: flex;
 	gap: 1rem
@@ -158,6 +169,10 @@ footer {
 	border-radius: 0.3rem;
 }
 
+footer>span {
+	cursor: pointer;
+}
+
 input[type="checkbox"] {
 	display: none;
 }
@@ -167,12 +182,18 @@ input[type="checkbox"]+label {
 	border-radius: 0.3rem;
 	padding: 0.2rem 0.4rem;
 	font-size: 5px;
+	cursor: pointer;
 }
 
 input[type="checkbox"]:checked+label {
 	border: 1px solid var(--point-color);
 	background-color: var(--point-color);
 	color: var(--white-color);
+}
+
+.content>div>span {
+	cursor: pointer;
+	font-size: 1rem;
 }
 
 @media(max-height: 740px) {
