@@ -54,6 +54,7 @@ header {
 	background-color: var(--white-color);
 	text-align: center;
 	font-size: 16px;
+	font-weight: 600;
 }
 
 #asset {
@@ -84,8 +85,8 @@ header {
 	flex-direction: column;
 	background-color: var(--white-color);
 	width: 90vw;
-	height: calc(100% - 31rem);
-	border-radius: 0.5rem;
+	height: calc(100% - 32.5rem);
+	border-radius: 0.6rem;
 	padding: 0.5rem;
 }
 
@@ -93,11 +94,11 @@ header {
 	display: flex;
 	flex-direction: column;
 	height: 7rem;
-	gap: 1.5rem;
+	gap: 2rem;
 	padding: 1.5rem;
 	padding-bottom: 0;
 	font-size: 16px;
-	margin-bottom: 2rem;
+	margin-bottom: 2.5rem;
 }
 
 #list_name {
@@ -131,7 +132,7 @@ header {
 	padding: 1.5rem;
 	padding-top: 0;
 	width: 100%;
-	height: calc(100vh - 38rem);
+	height: calc(100vh - 39.5rem);
 	overflow: scroll;
 }
 
@@ -143,6 +144,7 @@ header {
 
 .content p {
 	font-size: 13px;
+	font-weight:500;
 }
 
 .content>div {
@@ -161,13 +163,13 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100vw;
+	width: 90vw;
 	height: 5rem;
 	background-color: var(--point-color);
 	color: var(--white-color);
 	position: fixed;
-	bottom: 0;
-	border-radius: 0.3rem;
+	bottom: 1.5rem;
+	border-radius: 0.6rem;
 }
 
 footer>span {
