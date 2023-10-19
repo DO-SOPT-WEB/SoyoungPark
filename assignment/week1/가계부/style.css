@@ -3,9 +3,16 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
-
+:root{
+	--background-color:  rgb(245, 245, 245);
+	--white-color:white;
+	--point-color:rgb(250, 47, 88);
+	--blue-color:blue;
+	--red-color: red;
+	--gray-color: rgb(173, 173, 173);
+}
 body {
-	background-color: rgb(245, 245, 245);
+	background-color: var(--background-color);
 }
 
 #container {
@@ -24,7 +31,7 @@ header {
 	width: 90vw;
 	height: 7vh;
 	margin-top: 1.5vh;
-	background-color: white;
+	background-color: var(--white-color);
 	border-radius: 0.6rem;
 }
 
@@ -37,7 +44,7 @@ header {
 	gap: 1rem;
 	padding: 5rem;
 	border-radius: 0.6rem;
-	background-color: white;
+	background-color: var(--white-color);
 	text-align: center;
 }
 
@@ -57,17 +64,17 @@ header {
 }
 
 .income {
-	color: blue;
+	color: var(--blue-color);
 }
 
 .spending {
-	color: red;
+	color: var(--red-color);
 }
 
 #list {
 	display: flex;
 	flex-direction: column;
-	background-color: white;
+	background-color: var(--white-color);
 	width: 90vw;
 	height: 60vh;
 	border-radius: 0.5rem;
@@ -130,8 +137,8 @@ footer {
 	align-items: center;
 	width: 100vw;
 	height: 7vh;
-	background-color: rgb(250, 47, 88);
-	color: white;
+	background-color: var(--point-color);
+	color: var(--white-color);
 	position: fixed;
 	bottom: 0;
 	border-radius: 0.3rem;
@@ -142,16 +149,16 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]+label {
-	border: 1px solid rgb(173, 173, 173);
+	border: 1px solid var(--gray-color);
 	border-radius: 0.3rem;
 	padding: 0.2rem 0.4rem;
 	font-size: 5px;
 }
 
 input[type="checkbox"]:checked+label {
-	border: 1px solid rgb(250, 47, 88);
-	background-color: rgb(250, 47, 88);
-	color: white;
+	border: 1px solid var(--point-color);
+	background-color: var(--point-color);
+	color: var(--white-color);
 }
 
 .content p {
