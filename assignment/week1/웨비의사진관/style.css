@@ -87,14 +87,13 @@ color:rgb(229, 174, 35);
 }
 #first_images{
     display: flex;
-    flex-direction: row;
     gap: 1rem;
     justify-content: center;
     align-self: center;
     flex-wrap: wrap;
     margin-left:2rem;
     margin-right:2rem;
-    width:85vw;
+    width:80vw;
 }
 #first_images > img{
     width: 204px;
