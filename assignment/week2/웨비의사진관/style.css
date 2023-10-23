@@ -118,7 +118,18 @@ nav ul {
     margin-right: 2rem;
 }
 
-#first_images>img {
+.img_hover_container{
+    position: relative;
+}
+.hover_info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+#first_images img {
     width: 204px;
     height: 200px;
 }
