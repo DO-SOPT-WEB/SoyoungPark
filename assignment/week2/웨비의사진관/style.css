@@ -120,6 +120,10 @@ nav ul {
 
 .img_hover_container{
     position: relative;
+		transition-duration: 0.5s;
+}
+.img_hover_container:hover{
+	transform: translateY(-10px);
 }
 .img_hover_container:hover img{
     filter: brightness(0.4);
@@ -135,14 +139,14 @@ nav ul {
     position: absolute;
     top: 50%;
     left: 50%;
-		font-size: 12px;
     color: white;
+		font-size: 12px;
     text-align: center;
     transform: translate(-50%,-50%);
 }
 .hover_title{
-	font-size: 16px;
 	width: 15rem;
+	font-size: 16px;
 }
 
 #first_images img {
