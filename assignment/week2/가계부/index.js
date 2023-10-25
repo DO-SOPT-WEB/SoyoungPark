@@ -125,4 +125,11 @@ function deleteList(e) {
   const ul = document.getElementById("contents_list");
   const list = e.target.parentNode.parentNode.parentNode;
   ul.removeChild(list);
+
+  HISTORY_LIST.map((item)=> {
+    if(item.id == list.id){
+      HISTORY_LIST.splice((HISTORY_LIST.indexOf(item)),1);
+      displayMyAsset(HISTORY_LIST);
+    }
+  });
 }
