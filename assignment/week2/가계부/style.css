@@ -136,27 +136,35 @@ header {
 	overflow: scroll;
 }
 
-.content {
+.contents {
 	display: flex;
 	padding: 0.5rem;
+	font-weight:500;
+	font-size: 13px;
 	justify-content: space-between;
 }
 
-.content p {
+.history {
 	font-weight:500;
 	font-size: 13px;
 }
 
-.content>div {
+.contents>div {
 	display: flex;
-	gap: 1rem
+	gap: 1rem;
+	align-items: center;
 }
 
-.where {
+.place {
 	width: 30vw;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.closeBtn {
+	font-size: 1.1rem;
+	cursor: pointer;
 }
 
 footer {
