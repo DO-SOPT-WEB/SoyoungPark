@@ -156,3 +156,31 @@ function modalFilter(e){
     spend_category.style.display = "flex";
   }
 }
+
+function addList(){
+  const ul = document.getElementById("contents_list");
+  const category = document.querySelector("input[type=radio]:checked").value;
+  if(category == "수입"){
+    const newObj ={
+      id : HISTORY_LIST.length + 1,
+      history : document.getElementById("income_category").value,
+      place : document.getElementById("place_contents").value,
+      money: "income",
+      amount : document.getElementById("amount_contents").value
+    }
+    HISTORY_LIST.push({...newObj});
+  }
+  else{
+    const newObj ={
+      id : HISTORY_LIST.length + 1,
+      history : document.getElementById("spend_category").value,
+      place : document.getElementById("place_contents").value,
+      money: "spend",
+      amount : document.getElementById("amount_contents").value
+    }
+    HISTORY_LIST.push({...newObj});
+  }
+  ul.innerHTML="";
+  displayList(HISTORY_LIST);
+  displayMyAsset(HISTORY_LIST);
+}
