@@ -54,6 +54,8 @@ function createList(item) {
   const closeBtn = document.createElement("i");
   closeBtn.className = "closeBtn";
 
+  closeBtn.addEventListener("click", (event) => deleteList(event));
+
   history.textContent = item.history;
   place.textContent = item.place;
   amount.textContent = item.amount;
@@ -117,4 +119,10 @@ function displayButtonChecked() {
       displayList(HISTORY_LIST.filter((item) => item.money == "spend"));
     }
   }
+}
+
+function deleteList(e) {
+  const ul = document.getElementById("contents_list");
+  const list = e.target.parentNode.parentNode.parentNode;
+  ul.removeChild(list);
 }
