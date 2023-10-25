@@ -73,9 +73,9 @@
 						<i class="fa-solid fa-xmark" id="close_modal" onclick="closeModal()"></i>
 					</div>
 					<div class="modal_button_container">
-						<input type="radio" id="modal_in" name="modal_in_out" value="수입" checked >
+						<input type="radio" id="modal_in" name="modal_in_out" value="수입" checked onclick="modalFilter(this)" >
 						<label for="modal_in">수입</label>
-						<input type="radio" id="modal_out" name="modal_in_out" value="지출">
+						<input type="radio" id="modal_out" name="modal_in_out" value="지출" onclick="modalFilter(this)">
 						<label for="modal_out">지출</label>
 					</div>
 				</div>

@@ -143,3 +143,16 @@ function closeModal(){
   const modal = document.querySelector(".modal_background");
   modal.style.display = "none";
 }
+
+function modalFilter(e){
+  const income_category = document.getElementById("income_category_wrapper");
+  const spend_category = document.getElementById("spend_category_wrapper");
+  if(e.id == "modal_in"){
+    spend_category.style.display = "none";
+    income_category.style.display = "flex";
+  }
+  else{
+    income_category.style.display = "none";
+    spend_category.style.display = "flex";
+  }
+}
