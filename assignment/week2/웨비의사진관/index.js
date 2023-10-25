@@ -34,3 +34,13 @@ function seeMore(e){
   e.target.style.display = "none";
 }
 
+function leftScroll(e){
+  const preview_container = document.getElementById("preview_container");
+  preview_container.scrollLeft=preview_container.offsetLeft;
+ 
+}
+
+function rightScroll(e){
+  const preview_container = document.getElementById("preview_container");
+  preview_container.scrollLeft=preview_container.scrollWidth;
+}
