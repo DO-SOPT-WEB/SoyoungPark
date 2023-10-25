@@ -183,4 +183,5 @@ function addList(){
   ul.innerHTML="";
   displayList(HISTORY_LIST);
   displayMyAsset(HISTORY_LIST);
+  alert("저장되었습니다 !");
 }
