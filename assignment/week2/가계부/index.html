@@ -63,6 +63,57 @@
 				add_notes
 			</span>
 		</footer>
+
+		<div class="modal_background">
+			<div class="modal_container">
+
+				<div class="modal_header_wrapper">
+					<div class="modal_header">
+						<p>내역 추가</p>
+						<i class="fa-solid fa-xmark"></i>
+					</div>
+					<div class="modal_button_container">
+						<input type="radio" id="modal_in" name="modal_in_out" value="수입" checked >
+						<label for="modal_in">수입</label>
+						<input type="radio" id="modal_out" name="modal_in_out" value="지출">
+						<label for="modal_out">지출</label>
+					</div>
+				</div>
+
+				<div class="modal_contents">
+					<div id="income_category_wrapper">
+						<label for="income_category">종류</label>
+						<select id="income_category">
+							<option value="용돈" selected>용돈</option>
+							<option value="월급">월급</option>
+						</select>
+					</div>
+
+					<div id="spend_category_wrapper">
+						<label for="spend_category">종류</label>
+						<select id="spend_category">
+							<option value="식비" selected>식비</option>
+							<option value="쇼핑">쇼핑</option>
+						</select>
+					</div>
+
+					<div class="modal_place">
+						<label for="place_contents">내용</label>
+						<input type="text" id="place_contents">
+					</div>
+
+					<div class="modal_amount">
+						<label for="amount_contents">금액</label>
+						<input type="text" id="amount_contents">
+					</div>
+				</div>
+
+				<div class="modal_save_button">
+						<button type="button" id="saveBtn">저장</button>
+				</div>
+				
+			</div>
+		</div>
 	</div>
 	<script src="index.js"></script>
 </body>
