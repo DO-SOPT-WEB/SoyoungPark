@@ -54,7 +54,7 @@ function createList(item) {
   const closeBtn = document.createElement("i");
   closeBtn.className = "closeBtn";
 
-  closeBtn.addEventListener("click", (event) => deleteList(event));
+  closeBtn.addEventListener("click", (event) => checkAndDeleteList(event));
 
   history.textContent = item.history;
   place.textContent = item.place;
@@ -121,17 +121,31 @@ function displayButtonChecked() {
   }
 }
 
-function deleteList(e) {
+function checkAndDeleteList(e) {
+  const delete_modal = document.querySelector(".delete_modal_background");
   const ul = document.getElementById("contents_list");
   const list = e.target.parentNode.parentNode.parentNode;
-  ul.removeChild(list);
+  const yes = document.querySelector("#yes");
+  const no = document.querySelector("#no");
 
-  HISTORY_LIST.map((item) => {
-    if (item.id == list.id) {
-      HISTORY_LIST.splice((HISTORY_LIST.indexOf(item)), 1);
-      displayMyAsset(HISTORY_LIST);
-    }
+  delete_modal.style.display = "flex";
+
+  no.addEventListener("click", () => {
+    setTimeout(()=>{delete_modal.style.display = "none"},100);
+  })
+
+  yes.addEventListener("click", () => {
+    setTimeout(()=>{delete_modal.style.display = "none"},100);
+    ul.removeChild(list);
+
+    HISTORY_LIST.map((item) => {
+      if (item.id == list.id) {
+        HISTORY_LIST.splice((HISTORY_LIST.indexOf(item)), 1);
+        displayMyAsset(HISTORY_LIST);
+      }
+    });
   });
+
 }
 
 function openModal() {
