@@ -59,7 +59,7 @@
 			</ul>
 		</section>
 		<footer>
-			<span class="material-symbols-outlined">
+			<span class="material-symbols-outlined" onclick="openModal()">
 				add_notes
 			</span>
 		</footer>
@@ -70,7 +70,7 @@
 				<div class="modal_header_wrapper">
 					<div class="modal_header">
 						<p>내역 추가</p>
-						<i class="fa-solid fa-xmark"></i>
+						<i class="fa-solid fa-xmark" id="close_modal" onclick="closeModal()"></i>
 					</div>
 					<div class="modal_button_container">
 						<input type="radio" id="modal_in" name="modal_in_out" value="수입" checked >
