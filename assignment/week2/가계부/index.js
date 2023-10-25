@@ -58,16 +58,15 @@ function createList(item) {
 
   history.textContent = item.history;
   place.textContent = item.place;
-  amount.textContent = item.amount;
   closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 
   if (item.money == "spend") {
     amount.className = "spending";
-    amount.textContent = `-${item.amount}`;
+    amount.textContent = `-${comma(item.amount)}`;
   }
   else {
     amount.className = "income";
-    amount.textContent = `+${item.amount}`;
+    amount.textContent = `+${comma(item.amount)}`;
   }
 
   ul.appendChild(li);
@@ -89,17 +88,17 @@ function displayMyAsset(item) {
   item.map(item => {
 
     if (item.money == "spend") {
-      out_ += Number(item.amount);
+      out_ += Number(uncomma(item.amount));
     }
     else if (item.money == "income") {
-      in_ += Number(item.amount);
+      in_ += Number(uncomma(item.amount));
     }
   });
 
-  income_box.textContent = `+${in_}`;
-  spend_box.textContent = `-${out_}`;
+  income_box.textContent = `+${comma(in_)}`;
+  spend_box.textContent = `-${comma(out_)}`;
   const sum_ = INIT_BALANCE + in_ - out_;
-  asset_box.textContent = sum_;
+  asset_box.textContent = comma(sum_);
 }
 
 function displayButtonChecked() {
@@ -136,11 +135,11 @@ function checkAndDeleteList(e) {
 
   yes.addEventListener("click", () => {
     setTimeout(()=>{delete_modal.style.display = "none"},100);
-    ul.removeChild(list);
-
     HISTORY_LIST.map((item) => {
       if (item.id == list.id) {
         HISTORY_LIST.splice((HISTORY_LIST.indexOf(item)), 1);
+        ul.innerHTML="";
+        displayList(HISTORY_LIST);
         displayMyAsset(HISTORY_LIST);
       }
     });
@@ -180,8 +179,8 @@ function addList() {
   const income_category = document.getElementById("income_category").value;
   const spend_category = document.getElementById("spend_category").value
   const place_contents = document.getElementById("place_contents").value;
-  const amount_contents = document.getElementById("amount_contents").value;
-  
+  const amount_contents = uncomma(document.getElementById("amount_contents").value);
+  console.log(amount_contents);
   if(place_contents && amount_contents && Number(amount_contents)){
     if (category == "수입") {
       const newObj = {
@@ -215,4 +214,14 @@ function addList() {
     alert("모든 항목에 내용을 입력해주세요.");
   }
   
+}
+
+function comma(str){
+  return str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+function uncomma(str){
+  return str.replaceAll(",","");
+}
+function inputNumberFormat(e){
+  e.value = comma(uncomma(e.value));
 }
