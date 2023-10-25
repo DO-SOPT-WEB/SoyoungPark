@@ -32,6 +32,7 @@ const HISTORY_LIST = [
 
 document.addEventListener("DOMContentLoaded", () => {
   displayList(HISTORY_LIST);
+  displayMyAsset(HISTORY_LIST);
 });
 
 function displayList(item) {
@@ -74,4 +75,27 @@ function createList(item) {
   content1.appendChild(place);
   content2.appendChild(amount);
   content2.appendChild(closeBtn);
+}
+
+function displayMyAsset(item) {
+  const asset_box = document.getElementById("my_money");
+  const income_box = document.getElementById("in");
+  const spend_box = document.getElementById("out");
+  let out_ = 0;
+  let in_ = 0;
+
+  item.map(item => {
+    
+    if (item.money == "spend") {
+      out_ += Number(item.amount);
+    }
+    else if (item.money == "income") {
+      in_ += Number(item.amount);
+    }
+  });
+
+  income_box.textContent = `+${in_}`;
+  spend_box.textContent = `-${out_}`;
+  const sum_ = INIT_BALANCE + in_ - out_;
+  asset_box.textContent = sum_;
 }
