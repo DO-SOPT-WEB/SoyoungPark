@@ -174,28 +174,42 @@ function modalFilter(e) {
 function addList() {
   const ul = document.getElementById("contents_list");
   const category = document.querySelector("input[type=radio]:checked").value;
-  if (category == "수입") {
-    const newObj = {
-      id: HISTORY_LIST.length + 1,
-      history: document.getElementById("income_category").value,
-      place: document.getElementById("place_contents").value,
-      money: "income",
-      amount: document.getElementById("amount_contents").value
+  const income_category = document.getElementById("income_category").value;
+  const spend_category = document.getElementById("spend_category").value
+  const place_contents = document.getElementById("place_contents").value;
+  const amount_contents = document.getElementById("amount_contents").value;
+  
+  if(place_contents && amount_contents && Number(amount_contents)){
+    if (category == "수입") {
+      const newObj = {
+        id: HISTORY_LIST.length + 1,
+        history: income_category,
+        place: place_contents,
+        money: "income",
+        amount: amount_contents
+      }
+      HISTORY_LIST.push({ ...newObj });
     }
-    HISTORY_LIST.push({ ...newObj });
-  }
-  else {
-    const newObj = {
-      id: HISTORY_LIST.length + 1,
-      history: document.getElementById("spend_category").value,
-      place: document.getElementById("place_contents").value,
-      money: "spend",
-      amount: document.getElementById("amount_contents").value
+    else {
+      const newObj = {
+        id: HISTORY_LIST.length + 1,
+        history: spend_category,
+        place: place_contents,
+        money: "spend",
+        amount: amount_contents
+      }
+      HISTORY_LIST.push({ ...newObj });
     }
-    HISTORY_LIST.push({ ...newObj });
+    ul.innerHTML = "";
+    displayList(HISTORY_LIST);
+    displayMyAsset(HISTORY_LIST);
+    alert("저장되었습니다 !");
   }
-  ul.innerHTML = "";
-  displayList(HISTORY_LIST);
-  displayMyAsset(HISTORY_LIST);
-  alert("저장되었습니다 !");
+  else if(place_contents && amount_contents){
+    alert("금액에는 숫자만 입력할 수 있습니다.");
+  }
+  else{
+    alert("모든 항목에 내용을 입력해주세요.");
+  }
+  
 }
