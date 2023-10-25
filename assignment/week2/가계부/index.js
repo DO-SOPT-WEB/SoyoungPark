@@ -87,7 +87,7 @@ function displayMyAsset(item) {
   let in_ = 0;
 
   item.map(item => {
-    
+
     if (item.money == "spend") {
       out_ += Number(item.amount);
     }
@@ -126,61 +126,61 @@ function deleteList(e) {
   const list = e.target.parentNode.parentNode.parentNode;
   ul.removeChild(list);
 
-  HISTORY_LIST.map((item)=> {
-    if(item.id == list.id){
-      HISTORY_LIST.splice((HISTORY_LIST.indexOf(item)),1);
+  HISTORY_LIST.map((item) => {
+    if (item.id == list.id) {
+      HISTORY_LIST.splice((HISTORY_LIST.indexOf(item)), 1);
       displayMyAsset(HISTORY_LIST);
     }
   });
 }
 
-function openModal(){
+function openModal() {
   const modal = document.querySelector(".modal_background");
   modal.style.display = "block";
 }
 
-function closeModal(){
+function closeModal() {
   const modal = document.querySelector(".modal_background");
   modal.style.display = "none";
 }
 
-function modalFilter(e){
+function modalFilter(e) {
   const income_category = document.getElementById("income_category_wrapper");
   const spend_category = document.getElementById("spend_category_wrapper");
-  if(e.id == "modal_in"){
+  if (e.id == "modal_in") {
     spend_category.style.display = "none";
     income_category.style.display = "flex";
   }
-  else{
+  else {
     income_category.style.display = "none";
     spend_category.style.display = "flex";
   }
 }
 
-function addList(){
+function addList() {
   const ul = document.getElementById("contents_list");
   const category = document.querySelector("input[type=radio]:checked").value;
-  if(category == "수입"){
-    const newObj ={
-      id : HISTORY_LIST.length + 1,
-      history : document.getElementById("income_category").value,
-      place : document.getElementById("place_contents").value,
+  if (category == "수입") {
+    const newObj = {
+      id: HISTORY_LIST.length + 1,
+      history: document.getElementById("income_category").value,
+      place: document.getElementById("place_contents").value,
       money: "income",
-      amount : document.getElementById("amount_contents").value
+      amount: document.getElementById("amount_contents").value
     }
-    HISTORY_LIST.push({...newObj});
+    HISTORY_LIST.push({ ...newObj });
   }
-  else{
-    const newObj ={
-      id : HISTORY_LIST.length + 1,
-      history : document.getElementById("spend_category").value,
-      place : document.getElementById("place_contents").value,
+  else {
+    const newObj = {
+      id: HISTORY_LIST.length + 1,
+      history: document.getElementById("spend_category").value,
+      place: document.getElementById("place_contents").value,
       money: "spend",
-      amount : document.getElementById("amount_contents").value
+      amount: document.getElementById("amount_contents").value
     }
-    HISTORY_LIST.push({...newObj});
+    HISTORY_LIST.push({ ...newObj });
   }
-  ul.innerHTML="";
+  ul.innerHTML = "";
   displayList(HISTORY_LIST);
   displayMyAsset(HISTORY_LIST);
   alert("저장되었습니다 !");
