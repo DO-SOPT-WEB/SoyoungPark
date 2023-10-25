@@ -150,11 +150,14 @@ function checkAndDeleteList(e) {
 
 function openModal() {
   const modal = document.querySelector(".modal_background");
+  const modal_up = document.querySelector(".modal_container");
   modal.style.display = "block";
+  modal_up.style.animation ="fadeIn 1s";
 }
 
 function closeModal() {
   const modal = document.querySelector(".modal_background");
+  const modal_up = document.querySelector(".modal_container");
   modal.style.display = "none";
 }
 
