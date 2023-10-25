@@ -21,6 +21,13 @@ function createButton(){
       more_button.className="moreBtn";
       more_button.textContent = "더보기";
       item.parentNode.appendChild(more_button);
+      more_button.addEventListener("click", (event)=> seeMore(event));
     }
   });
+  
+}
+
+function seeMore(e){
+  e.target.parentNode.querySelector(".hover_content").style.display = "flex";
+  e.target.style.display = "none";
 }

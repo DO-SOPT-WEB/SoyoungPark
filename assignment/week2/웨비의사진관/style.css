@@ -329,6 +329,7 @@ footer {
     background-color: var(--yellow-color);
     border-radius: 0.4rem;
     margin-top: 0.7rem;
+    cursor: pointer;
 }
 
 @media(max-width: 1150px) {
