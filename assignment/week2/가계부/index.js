@@ -99,3 +99,22 @@ function displayMyAsset(item) {
   const sum_ = INIT_BALANCE + in_ - out_;
   asset_box.textContent = sum_;
 }
+
+function displayButtonChecked() {
+  const ul = document.getElementById("contents_list");
+  ul.innerHTML = "";
+  const checked = document.querySelectorAll("input[type=checkbox]:checked");
+  console.log(checked.length);
+  if (checked.length === 2) {
+    displayList(HISTORY_LIST);
+  }
+  else if (checked.length == 1) {
+    console.log(checked[0].id);
+    if (checked[0].id == "income") {
+      displayList(HISTORY_LIST.filter((item) => item.money == "income"));
+    }
+    else {
+      displayList(HISTORY_LIST.filter((item) => item.money == "spend"));
+    }
+  }
+}
