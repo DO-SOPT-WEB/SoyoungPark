@@ -43,16 +43,18 @@ header i {
 h2 {
     font-size: 22px;
 }
-
+.preview{
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+    gap: 1rem;
+}
 #preview_container {
     display: flex;
     width: 95vw;
-    padding: 0 1rem;
-    margin: 1rem;
-    align-self: center;
     flex-direction: row;
     gap: 1rem;
-    overflow: scroll;
+    overflow-x: scroll;
 }
 
 #preview_container::-webkit-scrollbar {
@@ -321,7 +323,7 @@ footer {
     transform: translateY(-10px);
 }
 
-.moreBtn{
+.btn{
     padding: 0.4rem;
     border: none;
     color: var(--gray-color);
@@ -330,6 +332,11 @@ footer {
     border-radius: 0.4rem;
     margin-top: 0.7rem;
     cursor: pointer;
+}
+
+#scroll_left,#scroll_right{
+    font-size: 16px;
+    color: var(--gray-color);
 }
 
 @media(max-width: 1150px) {

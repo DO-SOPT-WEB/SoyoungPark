@@ -18,10 +18,12 @@ function createButton(){
   hover_content.forEach((item) =>{
     if(item.innerHTML.length >= 40){
       const more_button = document.createElement("button")
-      more_button.className="moreBtn";
+      more_button.className="btn";
+      more_button.id="open";
       more_button.textContent = "더보기";
-      item.parentNode.appendChild(more_button);
       more_button.addEventListener("click", (event)=> seeMore(event));
+
+      item.parentNode.appendChild(more_button);
     }
   });
   
@@ -31,3 +33,4 @@ function seeMore(e){
   e.target.parentNode.querySelector(".hover_content").style.display = "flex";
   e.target.style.display = "none";
 }
+
