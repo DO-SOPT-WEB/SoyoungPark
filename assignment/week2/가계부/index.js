@@ -130,15 +130,15 @@ function checkAndDeleteList(e) {
   delete_modal.style.display = "flex";
 
   no.addEventListener("click", () => {
-    setTimeout(()=>{delete_modal.style.display = "none"},100);
+    setTimeout(() => { delete_modal.style.display = "none" }, 100);
   })
 
   yes.addEventListener("click", () => {
-    setTimeout(()=>{delete_modal.style.display = "none"},100);
+    setTimeout(() => { delete_modal.style.display = "none" }, 100);
     HISTORY_LIST.map((item) => {
       if (item.id == list.id) {
         HISTORY_LIST.splice((HISTORY_LIST.indexOf(item)), 1);
-        ul.innerHTML="";
+        ul.innerHTML = "";
         displayList(HISTORY_LIST);
         displayMyAsset(HISTORY_LIST);
       }
@@ -151,7 +151,7 @@ function openModal() {
   const modal = document.querySelector(".modal_background");
   const modal_up = document.querySelector(".modal_container");
   modal.style.display = "block";
-  modal_up.style.animation ="fadeIn 1s";
+  modal_up.style.animation = "fadeIn 1s";
 }
 
 function closeModal() {
@@ -181,7 +181,7 @@ function addList() {
   const place_contents = document.getElementById("place_contents").value;
   const amount_contents = uncomma(document.getElementById("amount_contents").value);
   console.log(amount_contents);
-  if(place_contents && amount_contents && Number(amount_contents)){
+  if (place_contents && amount_contents && Number(amount_contents)) {
     if (category == "수입") {
       const newObj = {
         id: HISTORY_LIST.length + 1,
@@ -207,21 +207,21 @@ function addList() {
     displayMyAsset(HISTORY_LIST);
     alert("저장되었습니다 !");
   }
-  else if(place_contents && amount_contents){
+  else if (place_contents && amount_contents) {
     alert("금액에는 숫자만 입력할 수 있습니다.");
   }
-  else{
+  else {
     alert("모든 항목에 내용을 입력해주세요.");
   }
-  
+
 }
 
-function comma(str){
+function comma(str) {
   return str.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
-function uncomma(str){
-  return str.replaceAll(",","");
+function uncomma(str) {
+  return str.replaceAll(",", "");
 }
-function inputNumberFormat(e){
+function inputNumberFormat(e) {
   e.value = comma(uncomma(e.value));
 }
