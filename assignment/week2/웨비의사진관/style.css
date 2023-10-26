@@ -134,8 +134,7 @@ nav ul {
     display: flex;
 	flex-direction: column;
     align-items: center;
-	gap: 1.2rem;
-		
+	gap: 1.2rem;		
 }
 .hover_content{
     display: -webkit-box;
@@ -146,7 +145,6 @@ nav ul {
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-		
 }
 .hover_info{
     display: none;
@@ -307,9 +305,9 @@ footer {
     justify-content: center;
     background-color: var(--gray-color);
 }
-#top_btn{
-    font-size:35px; 
+#top_btn{ 
     color: var(--darkYellow-color);
+    font-size:35px;
     opacity: 0;
 }
 
@@ -340,8 +338,8 @@ footer {
 }
 
 #scroll_left,#scroll_right{
-    font-size: 16px;
     color: var(--gray-color);
+    font-size: 16px;
 }
 
 @media(max-width: 1150px) {
