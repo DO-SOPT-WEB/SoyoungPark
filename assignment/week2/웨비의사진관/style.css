@@ -307,6 +307,11 @@ footer {
     justify-content: center;
     background-color: var(--gray-color);
 }
+#top_btn{
+    font-size:35px; 
+    color: var(--darkYellow-color);
+    opacity: 0;
+}
 
 .material-symbols-outlined {
     position: fixed;
