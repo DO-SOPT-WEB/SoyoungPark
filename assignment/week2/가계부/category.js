@@ -22,9 +22,19 @@ const CATEGORY_LIST = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayCategory(CATEGORY_LIST);
+  if(localStorage.length==0){
+    displayCategory(CATEGORY_LIST);
+    localStorage.setItem("categoryList",JSON.stringify(CATEGORY_LIST));
+  }
+  else{
+    displayCategory(JSON.parse(localStorage.getItem("categoryList")));
+  }
+ 
 });
 
+function once(){
+
+}
 function displayCategory(item) {
   item.map((item) => createCategory(item));
 }
@@ -48,6 +58,7 @@ function createCategory(item) {
 function addCategory(e) {
   const income_container = document.querySelector(".income_category_list");
   const spend_container = document.querySelector(".spend_category_list");
+  const category_list = JSON.parse(localStorage.getItem("categoryList"));
   let category_type;
   if (window.event.keyCode == 13) {
     if (e.id == "income_category_input") {
@@ -61,10 +72,13 @@ function addCategory(e) {
       type: category_type,
       name: e.value
     }
-    CATEGORY_LIST.push({ ...new_category });
+    console.log(new_category);
+    category_list.push(new_category);
+
+    localStorage.setItem("categoryList",JSON.stringify(category_list));
 
     income_container.innerHTML = "";
     spend_container.innerHTML = "";
-    displayCategory(CATEGORY_LIST);
+    displayCategory(JSON.parse(localStorage.getItem("categoryList")));
   }
 }

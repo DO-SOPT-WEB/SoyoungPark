@@ -225,3 +225,4 @@ function uncomma(str) {
 function inputNumberFormat(e) {
   e.value = comma(uncomma(e.value));
 }
+
