@@ -34,7 +34,7 @@ function seeMore(e) {
 
 function leftScroll(e) {
   const preview_container = document.getElementById('preview_container');
-  preview_container.scrollLeft = preview_container.offsetLeft;
+  preview_container.scrollLeft = 0;
 }
 
 function rightScroll(e) {
