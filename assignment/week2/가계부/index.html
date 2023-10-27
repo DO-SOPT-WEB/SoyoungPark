@@ -23,6 +23,7 @@
       <header class="service_name">
         <h3>소영이의 가계부</h3>
       </header>
+
       <section id="asset_box">
         <div id="asset">
           <p>나의 자산</p>
@@ -37,6 +38,7 @@
           </div>
         </div>
       </section>
+
       <section id="list">
         <div id="list_header">
           <div id="list_name">
@@ -58,6 +60,7 @@
         </div>
         <ul id="contents_list"></ul>
       </section>
+
       <footer>
         <div></div>
         <span class="material-symbols-outlined" onclick="openModal()"> add_notes </span>
@@ -87,7 +90,6 @@
                 <option value="월급">월급</option>
               </select>
             </div>
-
             <div id="spend_category_wrapper">
               <label for="spend_category">종류</label>
               <select id="spend_category">
@@ -95,12 +97,10 @@
                 <option value="쇼핑">쇼핑</option>
               </select>
             </div>
-
             <div class="modal_place">
               <label for="place_contents">내용</label>
               <input type="text" id="place_contents" autocomplete="off" />
             </div>
-
             <div class="modal_amount">
               <label for="amount_contents">금액</label>
               <input type="text" id="amount_contents" autocomplete="off" onkeyup="inputNumberFormat(this)" />
@@ -125,6 +125,7 @@
         </div>
       </div>
     </div>
+
     <script src="index.js"></script>
     <script src="addCategory.js"></script>
   </body>

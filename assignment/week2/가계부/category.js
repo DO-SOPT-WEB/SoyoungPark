@@ -53,24 +53,19 @@ function addCategory(e) {
   const income_container = document.querySelector('.income_category_list');
   const spend_container = document.querySelector('.spend_category_list');
   const category_list = JSON.parse(localStorage.getItem('categoryList'));
-
+  let category_type;
   if (window.event.keyCode == 13 && e.value != '') {
     if (e.id == 'income_category_input') {
-      const new_category = {
-        id: category_list.length + 1,
-        type: 'income',
-        name: e.value,
-      };
-      category_list.push(new_category);
+      category_type = 'income';
     } else {
-      const new_category = {
-        id: category_list.length + 1,
-        type: 'spend',
-        name: e.value,
-      };
-      category_list.push(new_category);
-      console.log(new_category);
+      category_type = 'spend';
     }
+    const new_category = {
+      id: category_list.length + 1,
+      type: category_type,
+      name: e.value,
+    };
+    category_list.push(new_category);
     localStorage.setItem('categoryList', JSON.stringify(category_list));
 
     income_container.innerHTML = '';

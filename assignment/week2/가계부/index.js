@@ -62,11 +62,10 @@ function createList(item) {
 
   if (item.money == 'spend') {
     amount.className = 'spending';
-    amount.textContent = `-${comma(item.amount)}`;
   } else {
     amount.className = 'income';
-    amount.textContent = `+${comma(item.amount)}`;
   }
+  amount.textContent = `-${comma(item.amount)}`;
 
   ul.appendChild(li);
   li.appendChild(content1);
@@ -102,11 +101,9 @@ function displayButtonChecked() {
   const ul = document.getElementById('contents_list');
   ul.innerHTML = '';
   const checked = document.querySelectorAll('input[type=checkbox]:checked');
-  console.log(checked.length);
   if (checked.length === 2) {
     displayList(HISTORY_LIST);
   } else if (checked.length == 1) {
-    console.log(checked[0].id);
     if (checked[0].id == 'income') {
       displayList(HISTORY_LIST.filter((item) => item.money == 'income'));
     } else {
@@ -154,7 +151,6 @@ function openModal() {
 
 function closeModal() {
   const modal = document.querySelector('.modal_background');
-  const modal_up = document.querySelector('.modal_container');
   modal.style.display = 'none';
 }
 
@@ -177,27 +173,22 @@ function addList() {
   const spend_category = document.getElementById('spend_category').value;
   const place_contents = document.getElementById('place_contents').value;
   const amount_contents = uncomma(document.getElementById('amount_contents').value);
+  let type;
 
   if (place_contents && amount_contents && Number(amount_contents)) {
     if (category == '수입') {
-      const newObj = {
-        id: HISTORY_LIST.length + 1,
-        history: income_category,
-        place: place_contents,
-        money: 'income',
-        amount: amount_contents,
-      };
-      HISTORY_LIST.push({ ...newObj });
+      type = 'income';
     } else {
-      const newObj = {
-        id: HISTORY_LIST.length + 1,
-        history: spend_category,
-        place: place_contents,
-        money: 'spend',
-        amount: amount_contents,
-      };
-      HISTORY_LIST.push({ ...newObj });
+      type = 'spend';
     }
+    const newObj = {
+      id: HISTORY_LIST.length + 1,
+      history: income_category,
+      place: place_contents,
+      money: type,
+      amount: amount_contents,
+    };
+    HISTORY_LIST.push({ ...newObj });
     ul.innerHTML = '';
     displayList(HISTORY_LIST);
     displayMyAsset(HISTORY_LIST);
