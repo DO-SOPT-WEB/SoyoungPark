@@ -62,10 +62,11 @@ function createList(item) {
 
   if (item.money == 'spend') {
     amount.className = 'spending';
+    amount.textContent = `-${comma(item.amount)}`;
   } else {
     amount.className = 'income';
+    amount.textContent = `+${comma(item.amount)}`;
   }
-  amount.textContent = `-${comma(item.amount)}`;
 
   ul.appendChild(li);
   li.appendChild(content1);
@@ -128,15 +129,17 @@ function checkAndDeleteList(e) {
   });
 
   yes.addEventListener('click', () => {
+    ul.removeChild(list);
+
     setTimeout(() => {
       delete_modal.style.display = 'none';
     }, 100);
+
     HISTORY_LIST.map((item) => {
       if (item.id == list.id) {
         HISTORY_LIST.splice(HISTORY_LIST.indexOf(item), 1);
         ul.innerHTML = '';
-        displayList(HISTORY_LIST);
-        displayMyAsset(HISTORY_LIST);
+        displayButtonChecked();
       }
     });
   });
