@@ -10,7 +10,7 @@ const OnBoarding = () => {
         <h3>원하는 추천 방식 선택</h3>
       </Style.CategoryHeader>
 
-      {category ? <Recommend category={category} /> : <SelectCategory category={category} />}
+      {category ? <Recommend category={category} /> : <SelectCategory setCategory={setCategory} />}
     </Style.Container>
   );
 };
@@ -39,28 +39,6 @@ const Style = {
     background-color: ${({ theme }) => theme.colors.white};
     align-items: center;
     border-radius: 1rem;
-  `,
-  CategoryContent: styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2rem;
-    width: 70%;
-    align-self: center;
-    height: 25rem;
-  `,
-  Category: styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0.2rem solid ${({ theme }) => theme.colors.brown};
-    background-color: ${({ theme }) => theme.colors.white};
-    width: 50%;
-    border-radius: 1rem;
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.brown};
-      color: ${({ theme }) => theme.colors.white};
-    }
   `,
 };
 

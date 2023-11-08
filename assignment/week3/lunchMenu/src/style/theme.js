@@ -8,6 +8,7 @@ const colors = {
   lightYellow: '#F3F798',
   lightBrown: '#f6eee5',
   brown: '#D9CDBF',
+  green: '#3F8335',
 };
 
 const theme = {

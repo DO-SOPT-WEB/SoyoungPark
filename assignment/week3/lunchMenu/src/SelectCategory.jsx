@@ -1,13 +1,24 @@
 import styled from 'styled-components';
 
-const SelectCategory = () => {
+const SelectCategory = (props) => {
+  const clickCategory = (e) => {
+    props.setCategory(e.target.innerHTML);
+  };
   return (
     <Style.CategoryContent>
-      <Style.Category>
-        <h3> 취향대로 추천</h3>
+      <Style.Category
+        onClick={(e) => {
+          clickCategory(e);
+        }}
+      >
+        취향대로 추천
       </Style.Category>
-      <Style.Category>
-        <h3>랜덤으로 추천</h3>
+      <Style.Category
+        onClick={(e) => {
+          clickCategory(e);
+        }}
+      >
+        랜덤으로 추천
       </Style.Category>
     </Style.CategoryContent>
   );
