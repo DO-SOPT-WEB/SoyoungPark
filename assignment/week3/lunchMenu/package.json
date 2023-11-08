@@ -11,7 +11,13 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.1",
+    "stylelint": "^15.11.0",
+    "stylelint-config-concentric-order": "^5.2.0",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -21,6 +27,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-styled-components-order": "^1.0.6",
     "vite": "^4.4.5"
   }
 }
