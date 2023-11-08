@@ -7,7 +7,7 @@ const colors = {
   purple: '#9900F0',
   lightYellow: '#F3F798',
   lightBrown: '#f6eee5',
-  brown: '#b3acac',
+  brown: '#D9CDBF',
 };
 
 const theme = {

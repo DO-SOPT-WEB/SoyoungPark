@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-
+import { useState } from 'react';
+import SelectCategory from './SelectCategory';
+import Recommend from './Recommend';
 const OnBoarding = () => {
+  const [category, setCategory] = useState('');
   return (
     <Style.Container>
       <Style.CategoryHeader>
         <h3>원하는 추천 방식 선택</h3>
       </Style.CategoryHeader>
-      <Style.CategoryContent>
-        <Style.Category>취향대로 추천</Style.Category>
-        <Style.Category>랜덤 추천</Style.Category>
-      </Style.CategoryContent>
-      <Style.StartBtn>START</Style.StartBtn>
+
+      {category ? <Recommend category={category} /> : <SelectCategory category={category} />}
     </Style.Container>
   );
 };
@@ -57,14 +57,10 @@ const Style = {
     background-color: ${({ theme }) => theme.colors.white};
     width: 50%;
     border-radius: 1rem;
-  `,
-  StartBtn: styled.button`
-    background-color: ${({ theme }) => theme.colors.white};
-    width: 6rem;
-    border: none;
-    border-radius: 1rem;
-    height: 3rem;
-    display: none;
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.brown};
+      color: ${({ theme }) => theme.colors.white};
+    }
   `,
 };
 
