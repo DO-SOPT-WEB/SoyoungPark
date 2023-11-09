@@ -32,7 +32,14 @@ const MENU_LIST = [
     image:
       'https://img.freepik.com/free-photo/fresh-gourmet-meal-on-wooden-table-close-up-generative-ai_188544-8192.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699401600&semt=sph',
   },
-  { name: '라면', country: '한식', main: '면', soup: '당연!' },
+  {
+    name: '라면',
+    country: '한식',
+    main: '면',
+    soup: '당연!',
+    image:
+      'https://mblogthumb-phinf.pstatic.net/MjAyMDA1MjZfNDMg/MDAxNTkwNDgxOTc1OTE1.rpezhYUxGHG0X6-dmVwuACnqm7AugH9CUjxEatcVNsAg.C27glH_kXPk5zTORLyjUbU_yjkGDEbmwZXjaq_xGltIg.JPEG.naverschool/%ED%98%B8%EB%A1%9C%EB%A1%9C%EB%A1%9D.jpg?type=w800',
+  },
   {
     name: '김밥',
     country: '한식',
