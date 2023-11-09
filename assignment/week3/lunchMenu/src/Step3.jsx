@@ -7,6 +7,9 @@ const Step3 = (props) => {
   const optionHandler = (e) => {
     props.setOption({ ...props.options, soup: e.target.innerHTML });
   };
+  const isSelected = (option) => {
+    return props.options.soup === option;
+  };
   return (
     <>
       <Style.CategoryHeader>
@@ -18,6 +21,7 @@ const Step3 = (props) => {
             selectHandler();
             optionHandler(e);
           }}
+          selected={isSelected('당연!')}
         >
           당연!
         </Style.Menu>
@@ -26,6 +30,7 @@ const Step3 = (props) => {
             selectHandler();
             optionHandler(e);
           }}
+          selected={isSelected('국물 필요없어!')}
         >
           국물 필요없어!
         </Style.Menu>
@@ -59,15 +64,12 @@ const Style = {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme, selected }) => (selected ? theme.colors.brown : theme.colors.white)};
+    color: ${({ theme, selected }) => (selected ? theme.colors.white : theme.colors.black)};
     border: 0.2rem solid ${({ theme }) => theme.colors.brown};
     border-radius: 1rem;
     &:hover {
       border: 0.2rem solid ${({ theme }) => theme.colors.deepBrown};
-    }
-    &:active {
-      background-color: ${({ theme }) => theme.colors.brown};
-      color: white;
     }
   `,
 };

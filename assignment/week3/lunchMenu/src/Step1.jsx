@@ -1,13 +1,19 @@
 import styled from 'styled-components';
-import SelectCategory from './SelectCategory';
 
 const Step1 = (props) => {
   const selectHandler = () => {
     props.setSelect(true);
   };
+
   const optionHandler = (e) => {
-    props.setOption({ ...props.options, country: e.target.innerHTML });
+    const selectedOption = e.target.innerHTML;
+    props.setOption({ ...props.options, country: selectedOption });
   };
+
+  const isSelected = (option) => {
+    return props.options.country === option;
+  };
+
   return (
     <>
       <Style.CategoryHeader>
@@ -19,6 +25,7 @@ const Step1 = (props) => {
             selectHandler();
             optionHandler(e);
           }}
+          selected={isSelected('한식')}
         >
           한식
         </Style.Menu>
@@ -27,6 +34,7 @@ const Step1 = (props) => {
             selectHandler();
             optionHandler(e);
           }}
+          selected={isSelected('일식')}
         >
           일식
         </Style.Menu>
@@ -35,6 +43,7 @@ const Step1 = (props) => {
             selectHandler();
             optionHandler(e);
           }}
+          selected={isSelected('중식')}
         >
           중식
         </Style.Menu>
@@ -69,15 +78,12 @@ const Style = {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme, selected }) => (selected ? theme.colors.brown : theme.colors.white)};
+    color: ${({ theme, selected }) => (selected ? theme.colors.white : theme.colors.black)};
     border: 0.2rem solid ${({ theme }) => theme.colors.brown};
     border-radius: 1rem;
     &:hover {
       border: 0.2rem solid ${({ theme }) => theme.colors.deepBrown};
-    }
-    &:active {
-      background-color: ${({ theme }) => theme.colors.brown};
-      color: white;
     }
   `,
 };
