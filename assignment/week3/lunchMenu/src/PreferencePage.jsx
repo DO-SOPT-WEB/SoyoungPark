@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
+import Step from './Step';
 import Recommend from './Recommend';
 import Result from './Result';
 const Preference = (props) => {
@@ -31,7 +29,14 @@ const Preference = (props) => {
       ) : null}
       {step == 1 ? (
         <>
-          <Step1 setSelect={setSelect} setOption={setOption} options={options} />
+          <Step
+            title="어떤 종류가 좋아?"
+            optionsKey="country"
+            setSelect={setSelect}
+            setOption={setOption}
+            options={options}
+            items={['한식', '일식', '중식']}
+          />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
             {select ? (
@@ -44,7 +49,14 @@ const Preference = (props) => {
       ) : null}
       {step == 2 ? (
         <>
-          <Step2 setSelect={setSelect} setOption={setOption} options={options} />
+          <Step
+            title="이 중에서는 뭐가 끌려?"
+            optionsKey="main"
+            setSelect={setSelect}
+            setOption={setOption}
+            options={options}
+            items={['밥', '면', '고기/해물']}
+          />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
             {select ? (
@@ -57,7 +69,14 @@ const Preference = (props) => {
       ) : null}
       {step == 3 ? (
         <>
-          <Step3 setSelect={setSelect} setOption={setOption} options={options} />
+          <Step
+            title="국물은 있는 게 좋아?"
+            optionsKey="soup"
+            setSelect={setSelect}
+            setOption={setOption}
+            options={options}
+            items={['당연!', '국물 필요없어!']}
+          />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
             {select ? (

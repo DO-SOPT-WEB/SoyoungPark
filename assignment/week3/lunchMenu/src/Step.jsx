@@ -1,48 +1,39 @@
 import styled from 'styled-components';
 
-const Step2 = (props) => {
+const Step = (props) => {
+  const { title, optionsKey, setSelect, setOption, options, items } = props;
+
   const selectHandler = () => {
-    props.setSelect(true);
+    setSelect(true);
   };
+
   const optionHandler = (e) => {
-    props.setOption({ ...props.options, main: e.target.innerHTML });
+    const selectedOption = e.target.innerHTML;
+    setOption({ ...options, [optionsKey]: selectedOption });
   };
+
   const isSelected = (option) => {
-    return props.options.main === option;
+    return options[optionsKey] === option;
   };
+
   return (
     <>
       <Style.CategoryHeader>
-        <h3>이 중에서는 뭐가 끌려?</h3>
+        <h3>{title}</h3>
       </Style.CategoryHeader>
       <Style.MenuContainer>
-        <Style.Menu
-          onClick={(e) => {
-            selectHandler();
-            optionHandler(e);
-          }}
-          selected={isSelected('밥')}
-        >
-          밥
-        </Style.Menu>
-        <Style.Menu
-          onClick={(e) => {
-            selectHandler();
-            optionHandler(e);
-          }}
-          selected={isSelected('면')}
-        >
-          면
-        </Style.Menu>
-        <Style.Menu
-          onClick={(e) => {
-            selectHandler();
-            optionHandler(e);
-          }}
-          selected={isSelected('고기/해물')}
-        >
-          고기/해물
-        </Style.Menu>
+        {items.map((item, index) => (
+          <Style.Menu
+            key={index}
+            onClick={(e) => {
+              selectHandler();
+              optionHandler(e);
+            }}
+            selected={isSelected(item)}
+          >
+            {item}
+          </Style.Menu>
+        ))}
       </Style.MenuContainer>
     </>
   );
@@ -80,11 +71,6 @@ const Style = {
     &:hover {
       border: 0.2rem solid ${({ theme }) => theme.colors.deepBrown};
     }
-    &:active {
-      background-color: ${({ theme }) => theme.colors.brown};
-      color: white;
-    }
   `,
 };
-
-export default Step2;
+export default Step;
