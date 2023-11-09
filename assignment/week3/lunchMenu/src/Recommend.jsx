@@ -1,10 +1,26 @@
 import styled from 'styled-components';
-
+import RandomPage from './RandomPage';
+import PreferencePage from './PreferencePage';
+import { useEffect } from 'react';
 const Recommend = (props) => {
+  const clickStart = () => {
+    props.setStartRecommend(true);
+  };
   return (
     <>
-      <Style.Category>{props.category}</Style.Category>
-      <Style.StartBtn>START</Style.StartBtn>
+      {props.startRecommend && props.category ? (
+        <>
+          {props.category === '취향대로 추천' ? (
+            <PreferencePage category={props.category} startRecommend={props.startRecommend} />
+          ) : null}
+          {props.category === '랜덤으로 추천' ? <RandomPage /> : null}
+        </>
+      ) : (
+        <>
+          <Style.Category>{props.category}</Style.Category>
+          <Style.StartBtn onClick={clickStart}>START</Style.StartBtn>
+        </>
+      )}
     </>
   );
 };

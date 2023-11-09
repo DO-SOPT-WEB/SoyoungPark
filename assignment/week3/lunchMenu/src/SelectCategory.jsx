@@ -5,26 +5,43 @@ const SelectCategory = (props) => {
     props.setCategory(e.target.innerHTML);
   };
   return (
-    <Style.CategoryContent>
-      <Style.Category
-        onClick={(e) => {
-          clickCategory(e);
-        }}
-      >
-        취향대로 추천
-      </Style.Category>
-      <Style.Category
-        onClick={(e) => {
-          clickCategory(e);
-        }}
-      >
-        랜덤으로 추천
-      </Style.Category>
-    </Style.CategoryContent>
+    <>
+      <Style.CategoryHeader>
+        <h3>원하는 추천 방식 선택</h3>
+      </Style.CategoryHeader>
+      <Style.CategoryContent>
+        <Style.Category
+          onClick={(e) => {
+            clickCategory(e);
+          }}
+        >
+          취향대로 추천
+        </Style.Category>
+        <Style.Category
+          onClick={(e) => {
+            clickCategory(e);
+          }}
+        >
+          랜덤으로 추천
+        </Style.Category>
+      </Style.CategoryContent>
+    </>
   );
 };
 
 const Style = {
+  CategoryHeader: styled.div`
+    display: flex;
+    width: 70%;
+    padding: 2rem;
+    border: 0.2rem solid ${({ theme }) => theme.colors.brown};
+    height: 3rem;
+    align-self: center;
+    justify-content: center;
+    background-color: ${({ theme }) => theme.colors.white};
+    align-items: center;
+    border-radius: 1rem;
+  `,
   CategoryContent: styled.div`
     display: flex;
     flex-direction: row;
