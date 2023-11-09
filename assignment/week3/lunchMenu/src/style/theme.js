@@ -1,14 +1,10 @@
 const colors = {
   white: '#FFFFFF',
-  black: '#000000',
-  skyBlue: '#C7F5FE',
-  lightPink: '#FCC8F8',
-  lightPurple: '#EAB4F8',
-  purple: '#9900F0',
-  lightYellow: '#F3F798',
   lightBrown: '#f6eee5',
   brown: '#D9CDBF',
   green: '#3F8335',
+  lightGreen: '#c3e5be',
+  deepBrown: '#c9ad91',
 };
 
 const theme = {

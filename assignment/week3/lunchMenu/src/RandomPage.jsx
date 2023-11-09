@@ -1,5 +1,5 @@
-const Random = () => {
+const RandomPage = () => {
   return <div></div>;
 };
 
-export default Random;
+export default RandomPage;

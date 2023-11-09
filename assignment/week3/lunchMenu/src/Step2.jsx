@@ -43,6 +43,13 @@ const Style = {
     background-color: ${({ theme }) => theme.colors.white};
     border: 0.2rem solid ${({ theme }) => theme.colors.brown};
     border-radius: 1rem;
+    &:hover {
+      border: 0.2rem solid ${({ theme }) => theme.colors.deepBrown};
+    }
+    &:active {
+      background-color: ${({ theme }) => theme.colors.brown};
+      color: white;
+    }
   `,
 };
 
