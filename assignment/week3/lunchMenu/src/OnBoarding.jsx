@@ -5,10 +5,11 @@ import Recommend from './Recommend';
 const OnBoarding = () => {
   const [category, setCategory] = useState('');
   const [startRecommend, setStartRecommend] = useState(false);
+
   return (
     <Style.Container>
       {category ? (
-        <Recommend category={category} setStartRecommend={setStartRecommend} startRecommend={startRecommend} />
+        <Recommend category={category} startRecommend={startRecommend} setStartRecommend={setStartRecommend} />
       ) : (
         <SelectCategory setCategory={setCategory} />
       )}

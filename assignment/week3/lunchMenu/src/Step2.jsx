@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
-const Step2 = () => {
+const Step2 = (props) => {
+  const selectHandler = () => {
+    props.setSelect(true);
+  };
   return (
     <>
       <Style.CategoryHeader>
         <h3>이 중에서는 뭐가 끌려?</h3>
       </Style.CategoryHeader>
       <Style.MenuContainer>
-        <Style.Menu>밥</Style.Menu>
-        <Style.Menu>면</Style.Menu>
-        <Style.Menu>고기/해물</Style.Menu>
+        <Style.Menu onClick={selectHandler}>밥</Style.Menu>
+        <Style.Menu onClick={selectHandler}>면</Style.Menu>
+        <Style.Menu onClick={selectHandler}>고기/해물</Style.Menu>
       </Style.MenuContainer>
     </>
   );

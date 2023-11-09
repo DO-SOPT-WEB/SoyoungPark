@@ -5,6 +5,8 @@ const colors = {
   green: '#3F8335',
   lightGreen: '#c3e5be',
   deepBrown: '#c9ad91',
+  lightGray: '#efebe8',
+  gray: '#dbdbdb',
 };
 
 const theme = {

@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 import RandomPage from './RandomPage';
 import PreferencePage from './PreferencePage';
-import { useEffect } from 'react';
+import { useState } from 'react';
 const Recommend = (props) => {
+  const [startRecommend, setStartRecommend] = useState(false);
   const clickStart = () => {
-    props.setStartRecommend(true);
+    setStartRecommend(true);
   };
   return (
     <>
-      {props.startRecommend && props.category ? (
+      {startRecommend ? (
         <>
-          {props.category === '취향대로 추천' ? (
-            <PreferencePage category={props.category} startRecommend={props.startRecommend} />
-          ) : null}
+          {props.category === '취향대로 추천' ? <PreferencePage category={props.category} /> : null}
           {props.category === '랜덤으로 추천' ? <RandomPage /> : null}
         </>
       ) : (

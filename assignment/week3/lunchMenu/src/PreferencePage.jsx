@@ -7,39 +7,58 @@ import Recommend from './Recommend';
 import Result from './Result';
 const Preference = (props) => {
   const [step, setStep] = useState(1);
+  const [select, setSelect] = useState(false);
   const nextStep = () => {
     setStep(step + 1);
+    setSelect(false);
   };
   const prevStep = () => {
     setStep(step - 1);
+    setSelect(true);
   };
   return (
     <Style.Container>
-      {step == 0 ? <Recommend category={props.category} /> : null}
+      {step == 0 ? (
+        <>
+          <Recommend category={props.category} setStep={setStep} />
+        </>
+      ) : null}
       {step == 1 ? (
         <>
-          <Step1 />
+          <Step1 setSelect={setSelect} />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
-            <Style.Btn onClick={nextStep}>다음으로</Style.Btn>
+            {select ? (
+              <Style.Btn onClick={nextStep}>다음으로</Style.Btn>
+            ) : (
+              <Style.BtnDisable>다음으로</Style.BtnDisable>
+            )}
           </Style.BtnContainer>
         </>
       ) : null}
       {step == 2 ? (
         <>
-          <Step2 />
+          <Step2 setSelect={setSelect} />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
-            <Style.Btn onClick={nextStep}>다음으로</Style.Btn>
+            {select ? (
+              <Style.Btn onClick={nextStep}>다음으로</Style.Btn>
+            ) : (
+              <Style.BtnDisable>다음으로</Style.BtnDisable>
+            )}
           </Style.BtnContainer>
         </>
       ) : null}
       {step == 3 ? (
         <>
-          <Step3 />
+          <Step3 setSelect={setSelect} />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
-            <Style.Btn onClick={nextStep}>결과보기</Style.Btn>
+            {select ? (
+              <Style.Btn onClick={nextStep}>다음으로</Style.Btn>
+            ) : (
+              <Style.BtnDisable>다음으로</Style.BtnDisable>
+            )}
           </Style.BtnContainer>
         </>
       ) : null}
@@ -70,15 +89,23 @@ const Style = {
     gap: 2rem;
   `,
   Btn: styled.button`
-    background-color: ${({ theme }) => theme.colors.white};
+    width: 6rem;
+    border-radius: 1rem;
+    background-color: ${({ theme }) => theme.colors.brown};
+    color: white;
+    border: none;
+    height: 3rem;
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.green};
+    }
+  `,
+  BtnDisable: styled.button`
+    background-color: ${({ theme }) => theme.colors.lightGray};
+    color: ${({ theme }) => theme.colors.gray};
     width: 6rem;
     border: none;
     border-radius: 1rem;
     height: 3rem;
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.green};
-      color: ${({ theme }) => theme.colors.white};
-    }
   `,
 };
 export default Preference;
