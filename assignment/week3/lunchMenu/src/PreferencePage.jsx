@@ -26,7 +26,7 @@ const Preference = (props) => {
     <Style.Container>
       {step == 0 ? (
         <>
-          <Recommend category={props.category} setStep={setStep} />
+          <Recommend category={props.category} />
         </>
       ) : null}
       {step == 1 ? (
@@ -70,7 +70,7 @@ const Preference = (props) => {
       ) : null}
       {step == 4 ? (
         <>
-          <Result options={options} category={props.category} />
+          <Result options={options} category={props.category} setStep={setStep} />
         </>
       ) : null}
     </Style.Container>

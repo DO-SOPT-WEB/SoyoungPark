@@ -133,6 +133,10 @@ const MENU_LIST = [
 const Result = (props) => {
   const [finalmenu, setFinalMenu] = useState('');
   const [menuImage, setMenuImage] = useState('');
+  const reset = () => {
+    props.setStep(0);
+  };
+
   if (props.category === '취향대로 추천') {
     const menu = MENU_LIST.filter((item) => {
       return (
@@ -166,10 +170,11 @@ const Result = (props) => {
         <img src={menuImage}></img>
         <h2>{finalmenu}</h2>
       </Style.ContentContainer>
-      <Style.Btn>다시하기</Style.Btn>
+      <Style.Btn onClick={reset}>다시하기</Style.Btn>
     </>
   );
 };
+
 const Style = {
   ResultHeader: styled.div`
     display: flex;
