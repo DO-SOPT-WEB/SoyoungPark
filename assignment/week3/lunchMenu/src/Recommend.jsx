@@ -12,7 +12,7 @@ const Recommend = (props) => {
       {startRecommend ? (
         <>
           {props.category === '취향대로 추천' ? <PreferencePage category={props.category} /> : null}
-          {props.category === '랜덤으로 추천' ? <RandomPage /> : null}
+          {props.category === '랜덤으로 추천' ? <RandomPage category={props.category} /> : null}
         </>
       ) : (
         <>

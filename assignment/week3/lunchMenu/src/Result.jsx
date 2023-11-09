@@ -127,7 +127,7 @@ const MENU_LIST = [
     country: '중식',
     main: '면',
     soup: '당연!',
-    image: 'https://i.ytimg.com/vi/xo0HeZdnMQQ/maxresdefault.jpg',
+    image: 'https://t1.daumcdn.net/cfile/tistory/227DF04451F36B4436',
   },
 ];
 const Result = (props) => {

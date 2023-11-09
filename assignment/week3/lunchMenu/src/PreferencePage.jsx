@@ -70,7 +70,7 @@ const Preference = (props) => {
       ) : null}
       {step == 4 ? (
         <>
-          <Result options={options} />
+          <Result options={options} category={props.category} />
         </>
       ) : null}
     </Style.Container>
