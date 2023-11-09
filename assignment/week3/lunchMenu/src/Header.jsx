@@ -24,18 +24,18 @@ const Style = {
     text-align: center;
     height: 5rem;
     background-color: ${({ theme }) => theme.colors.lightBrown};
-    width: 100%;
+    width: 100vw;
   `,
   ImgContainer: styled.div`
     font-size: 1rem;
     display: flex;
-    justify-content: center; /* 이미지를 가운데 정렬합니다. */
-    align-items: center; /* 이미지를 가운데 정렬합니다. */
+    justify-content: center;
+    align-items: center;
 
     & > img {
-      width: 2rem; /* 이미지의 가로폭을 50%로 조절 */
-      max-width: 100%;
-      height: auto; /* 가로폭에 따라 세로 크기 자동 조절 */
+      width: 2rem;
+      max-width: 100vw;
+      height: auto;
       transform: rotate(15deg);
     }
   `,

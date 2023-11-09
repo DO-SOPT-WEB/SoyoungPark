@@ -32,7 +32,7 @@ const SelectCategory = (props) => {
 const Style = {
   CategoryHeader: styled.div`
     display: flex;
-    width: 70%;
+    width: 60vw;
     padding: 2rem;
     border: 0.2rem solid ${({ theme }) => theme.colors.brown};
     height: 3rem;
@@ -47,7 +47,7 @@ const Style = {
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
-    width: 70%;
+    width: 60vw;
     align-self: center;
     height: 25rem;
   `,

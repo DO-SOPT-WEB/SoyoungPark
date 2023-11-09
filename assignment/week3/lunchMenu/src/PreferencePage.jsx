@@ -80,7 +80,7 @@ const Style = {
     align-items: center;
     gap: 2rem;
     background-color: ${({ theme }) => theme.colors.lightBrown};
-    width: 70%;
+    width: 60vw;
     height: calc(100% - 9rem);
     border-radius: 0.6rem;
   `,

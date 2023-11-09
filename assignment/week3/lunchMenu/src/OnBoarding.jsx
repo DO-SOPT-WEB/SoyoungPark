@@ -26,8 +26,8 @@ const Style = {
     align-items: center;
     gap: 2rem;
     background-color: ${({ theme }) => theme.colors.lightBrown};
-    width: 80%;
-    height: calc(100% - 9rem);
+    width: 80vw;
+    height: calc(100vh - 9rem);
     border-radius: 0.6rem;
   `,
 };

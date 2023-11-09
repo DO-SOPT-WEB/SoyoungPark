@@ -31,7 +31,7 @@ const Style = {
     justify-content: center;
     border: 0.2rem solid ${({ theme }) => theme.colors.brown};
     background-color: ${({ theme }) => theme.colors.white};
-    width: 70%;
+    width: 60vw;
     border-radius: 1rem;
     height: 25rem;
   `,
