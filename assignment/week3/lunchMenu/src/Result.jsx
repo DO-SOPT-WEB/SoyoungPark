@@ -133,20 +133,29 @@ const MENU_LIST = [
 const Result = (props) => {
   const [finalmenu, setFinalMenu] = useState('');
   const [menuImage, setMenuImage] = useState('');
-  const menu = MENU_LIST.filter((item) => {
-    return (
-      item.country === props.options.country && item.main === props.options.main && item.soup === props.options.soup
-    );
-  });
-  useEffect(() => {
-    if (menu.length > 0) {
-      const random = Math.floor(Math.random() * menu.length);
-      setFinalMenu(menu[random].name);
-      setMenuImage(menu[random].image);
-    } else {
-      setFinalMenu('원하시는 메뉴가 업써용 ㅜ오늘 점심은,,😭');
-    }
-  }, []);
+  if (props.category === '취향대로 추천') {
+    const menu = MENU_LIST.filter((item) => {
+      return (
+        item.country === props.options.country && item.main === props.options.main && item.soup === props.options.soup
+      );
+    });
+    useEffect(() => {
+      if (menu.length > 0) {
+        const random = Math.floor(Math.random() * menu.length);
+        setFinalMenu(menu[random].name);
+        setMenuImage(menu[random].image);
+      } else {
+        setFinalMenu('원하시는 메뉴가 업써용 ㅜ오늘 점심은,,😭');
+      }
+    }, []);
+  } else {
+    useEffect(() => {
+      const random = Math.floor(Math.random() * MENU_LIST.length);
+      const menu = MENU_LIST[random];
+      setFinalMenu(menu.name);
+      setMenuImage(menu.image);
+    }, []);
+  }
 
   return (
     <>
