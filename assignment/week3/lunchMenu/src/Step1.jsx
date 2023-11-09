@@ -5,15 +5,39 @@ const Step1 = (props) => {
   const selectHandler = () => {
     props.setSelect(true);
   };
+  const optionHandler = (e) => {
+    props.setOption({ ...props.options, country: e.target.innerHTML });
+  };
   return (
     <>
       <Style.CategoryHeader>
         <h3>어떤 종류가 좋아?</h3>
       </Style.CategoryHeader>
       <Style.MenuContainer>
-        <Style.Menu onClick={selectHandler}>한식</Style.Menu>
-        <Style.Menu onClick={selectHandler}>일식</Style.Menu>
-        <Style.Menu onClick={selectHandler}>중식</Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          한식
+        </Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          일식
+        </Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          중식
+        </Style.Menu>
       </Style.MenuContainer>
     </>
   );

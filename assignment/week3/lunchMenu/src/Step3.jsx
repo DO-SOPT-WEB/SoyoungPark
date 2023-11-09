@@ -4,14 +4,31 @@ const Step3 = (props) => {
   const selectHandler = () => {
     props.setSelect(true);
   };
+  const optionHandler = (e) => {
+    props.setOption({ ...props.options, soup: e.target.innerHTML });
+  };
   return (
     <>
       <Style.CategoryHeader>
         <h3>국물은 있는 게 좋아?</h3>
       </Style.CategoryHeader>
       <Style.MenuContainer>
-        <Style.Menu onClick={selectHandler}>당연!</Style.Menu>
-        <Style.Menu onClick={selectHandler}>국물 필요없어!</Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          당연!
+        </Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          국물 필요없어!
+        </Style.Menu>
       </Style.MenuContainer>
     </>
   );

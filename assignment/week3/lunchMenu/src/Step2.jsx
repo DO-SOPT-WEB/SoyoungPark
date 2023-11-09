@@ -4,15 +4,39 @@ const Step2 = (props) => {
   const selectHandler = () => {
     props.setSelect(true);
   };
+  const optionHandler = (e) => {
+    props.setOption({ ...props.options, main: e.target.innerHTML });
+  };
   return (
     <>
       <Style.CategoryHeader>
         <h3>이 중에서는 뭐가 끌려?</h3>
       </Style.CategoryHeader>
       <Style.MenuContainer>
-        <Style.Menu onClick={selectHandler}>밥</Style.Menu>
-        <Style.Menu onClick={selectHandler}>면</Style.Menu>
-        <Style.Menu onClick={selectHandler}>고기/해물</Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          밥
+        </Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          면
+        </Style.Menu>
+        <Style.Menu
+          onClick={(e) => {
+            selectHandler();
+            optionHandler(e);
+          }}
+        >
+          고기/해물
+        </Style.Menu>
       </Style.MenuContainer>
     </>
   );

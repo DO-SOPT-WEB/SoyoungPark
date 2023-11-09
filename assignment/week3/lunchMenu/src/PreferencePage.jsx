@@ -8,6 +8,12 @@ import Result from './Result';
 const Preference = (props) => {
   const [step, setStep] = useState(1);
   const [select, setSelect] = useState(false);
+  const [options, setOption] = useState({
+    country: '',
+    main: '',
+    soup: '',
+  });
+
   const nextStep = () => {
     setStep(step + 1);
     setSelect(false);
@@ -25,7 +31,7 @@ const Preference = (props) => {
       ) : null}
       {step == 1 ? (
         <>
-          <Step1 setSelect={setSelect} />
+          <Step1 setSelect={setSelect} setOption={setOption} options={options} />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
             {select ? (
@@ -38,7 +44,7 @@ const Preference = (props) => {
       ) : null}
       {step == 2 ? (
         <>
-          <Step2 setSelect={setSelect} />
+          <Step2 setSelect={setSelect} setOption={setOption} options={options} />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
             {select ? (
@@ -51,7 +57,7 @@ const Preference = (props) => {
       ) : null}
       {step == 3 ? (
         <>
-          <Step3 setSelect={setSelect} />
+          <Step3 setSelect={setSelect} setOption={setOption} options={options} />
           <Style.BtnContainer>
             <Style.Btn onClick={prevStep}>이전으로</Style.Btn>
             {select ? (
@@ -64,7 +70,7 @@ const Preference = (props) => {
       ) : null}
       {step == 4 ? (
         <>
-          <Result />
+          <Result options={options} />
         </>
       ) : null}
     </Style.Container>
