@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import cookie1 from '/cookie.png';
-import cookie2 from '/cookie2.png';
+import cookie1 from '../images/cookie.png';
+import cookie2 from '../images/cookie2.png';
 
 const Header = () => {
   return (

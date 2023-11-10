@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import Step from './Step';
-import Recommend from './Recommend';
-import Result from './Result';
+import Step from '../components/Step';
+import RecommendStartPage from './RecommendStartPage';
+import ResultPage from './ResultPage';
 const Preference = (props) => {
   const [step, setStep] = useState(1);
   const [select, setSelect] = useState(false);
@@ -24,7 +24,7 @@ const Preference = (props) => {
     <Style.Container>
       {step == 0 ? (
         <>
-          <Recommend category={props.category} />
+          <RecommendStartPage category={props.category} />
         </>
       ) : null}
       {step == 1 ? (
@@ -89,7 +89,7 @@ const Preference = (props) => {
       ) : null}
       {step == 4 ? (
         <>
-          <Result options={options} category={props.category} setStep={setStep} />
+          <ResultPage options={options} category={props.category} setStep={setStep} />
         </>
       ) : null}
     </Style.Container>

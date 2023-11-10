@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import SelectCategory from './SelectCategory';
-import Recommend from './Recommend';
-const OnBoarding = () => {
+import SelectCategory from '../components/SelectCategory';
+import RecommendStartPage from './RecommendStartPage';
+const OnBoardingPage = () => {
   const [category, setCategory] = useState('');
   const [startRecommend, setStartRecommend] = useState(false);
 
   return (
     <Style.Container>
       {category ? (
-        <Recommend category={category} startRecommend={startRecommend} setStartRecommend={setStartRecommend} />
+        <RecommendStartPage category={category} startRecommend={startRecommend} setStartRecommend={setStartRecommend} />
       ) : (
         <SelectCategory setCategory={setCategory} />
       )}
@@ -32,4 +32,4 @@ const Style = {
   `,
 };
 
-export default OnBoarding;
+export default OnBoardingPage;

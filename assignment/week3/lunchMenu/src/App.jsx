@@ -2,15 +2,15 @@ import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 import GlobalStyle from './style/GlobalStyle';
 import theme from './style/theme';
-import Header from './Header';
-import OnBoarding from './OnBoarding';
+import Header from './components/Header';
+import OnBoardingPage from './pages/OnBoardingPage';
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Styled>
         <Header />
-        <OnBoarding />
+        <OnBoardingPage />
       </Styled>
     </ThemeProvider>
   );

@@ -137,7 +137,7 @@ const MENU_LIST = [
     image: 'https://t1.daumcdn.net/cfile/tistory/227DF04451F36B4436',
   },
 ];
-const Result = (props) => {
+const ResultPage = (props) => {
   const [finalmenu, setFinalMenu] = useState('');
   const [menuImage, setMenuImage] = useState('');
   const reset = () => {
@@ -220,4 +220,4 @@ const Style = {
     }
   `,
 };
-export default Result;
+export default ResultPage;

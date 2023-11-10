@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import RandomPage from './RandomPage';
 import PreferencePage from './PreferencePage';
 import { useState } from 'react';
-const Recommend = (props) => {
+const RecommendStartPage = (props) => {
   const [startRecommend, setStartRecommend] = useState(false);
   const clickStart = () => {
     setStartRecommend(true);
@@ -48,4 +48,4 @@ const Style = {
   `,
 };
 
-export default Recommend;
+export default RecommendStartPage;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Result from './Result';
-import Recommend from './Recommend';
+import ResultPage from './ResultPage';
+import RecommendStartPage from './RecommendStartPage';
 
 const RandomPage = (props) => {
   const [time, setTime] = useState(3);
@@ -15,9 +15,9 @@ const RandomPage = (props) => {
       {time ? (
         <h1>{time}</h1>
       ) : step === 0 ? (
-        <Recommend category={props.category} />
+        <RecommendStartPage category={props.category} />
       ) : (
-        <Result category={props.category} setStep={setStep} />
+        <ResultPage category={props.category} setStep={setStep} />
       )}
     </>
   );
