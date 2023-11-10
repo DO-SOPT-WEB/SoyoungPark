@@ -31,6 +31,7 @@ const Preference = (props) => {
         <>
           <Step
             title="어떤 종류가 좋아?"
+            step={step}
             optionsKey="country"
             setSelect={setSelect}
             setOption={setOption}
@@ -51,6 +52,7 @@ const Preference = (props) => {
         <>
           <Step
             title="이 중에서는 뭐가 끌려?"
+            step={step}
             optionsKey="main"
             setSelect={setSelect}
             setOption={setOption}
@@ -71,6 +73,7 @@ const Preference = (props) => {
         <>
           <Step
             title="국물은 있는 게 좋아?"
+            step={step}
             optionsKey="soup"
             setSelect={setSelect}
             setOption={setOption}

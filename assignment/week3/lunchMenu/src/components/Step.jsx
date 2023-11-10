@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Step = (props) => {
-  const { title, optionsKey, setSelect, setOption, options, items } = props;
+  const { title, step, optionsKey, setSelect, setOption, options, items } = props;
 
   const selectHandler = () => {
     setSelect(true);
@@ -21,6 +21,7 @@ const Step = (props) => {
       <Style.CategoryHeader>
         <h3>{title}</h3>
       </Style.CategoryHeader>
+      <Style.Step>{step}/3</Style.Step>
       <Style.MenuContainer>
         {items.map((item, index) => (
           <Style.Menu
@@ -50,6 +51,10 @@ const Style = {
     background-color: ${({ theme }) => theme.colors.white};
     align-items: center;
     border-radius: 1rem;
+  `,
+  Step: styled.div`
+    align-self: flex-end;
+    margin-right: 0.5rem;
   `,
   MenuContainer: styled.div`
     display: flex;
