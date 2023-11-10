@@ -19,6 +19,13 @@ const MENU_LIST = [
     image: 'https://ssproxy.ucloudbiz.olleh.com/v1/AUTH_e59809eb-bdc9-44d7-9d8f-2e7f0e47ba91/post_card/16354724603.jpg',
   },
   {
+    name: '매운탕',
+    country: '한식',
+    main: '고기/해물',
+    soup: '당연!',
+    image: 'https://newsimg.sedaily.com/2023/05/01/29PER8QKSZ_1.jpg',
+  },
+  {
     name: '순대국밥',
     country: '한식',
     main: '밥',
@@ -83,7 +90,7 @@ const MENU_LIST = [
     country: '일식',
     main: '면',
     soup: '국물 필요없어!',
-    image: 'https://www.homecuisine.co.kr/files/attach/images/142/627/014/b0db9e7a79e564d17ce3eaf824361c70.JPG',
+    image: 'https://cdn.imweb.me/thumbnail/20190508/5cd2897ec65cc.jpg',
   },
   {
     name: '규동',
@@ -101,11 +108,18 @@ const MENU_LIST = [
     image: 'https://m.namjasusan.com/web/product/medium/202205/f26bdf68bcf65a833be99a744cabb189.jpg',
   },
   {
+    name: '하이라이스',
+    country: '일식',
+    main: '밥',
+    soup: '당연!',
+    image: 'https://memart.kr/cdn/shop/products/0000006614765_i2_1200.jpg?v=1653289661',
+  },
+  {
     name: '잡채밥',
     country: '중식',
     main: '밥',
     soup: '국물 필요없어!',
-    image: 'https://www.homecuisine.co.kr/files/attach/images/142/850/002/37e6010a503adf40d59f6d0d6dadd8eb.JPG',
+    image: 'https://ppss.kr/wp-content/uploads/2021/04/3-39.jpg',
   },
   {
     name: '마라탕',
@@ -136,6 +150,13 @@ const MENU_LIST = [
     main: '면',
     soup: '당연!',
     image: 'https://t1.daumcdn.net/cfile/tistory/227DF04451F36B4436',
+  },
+  {
+    name: '짬뽕밥',
+    country: '중식',
+    main: '밥',
+    soup: '당연!',
+    image: 'https://t1.daumcdn.net/cfile/tistory/994EBC4B5E4E7B6B34',
   },
 ];
 const ResultPage = (props) => {
