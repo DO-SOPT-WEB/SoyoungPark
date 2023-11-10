@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import nope from '../images/nope.png';
 const MENU_LIST = [
   {
     name: '불고기',
@@ -156,7 +157,8 @@ const ResultPage = (props) => {
         setFinalMenu(menu[random].name);
         setMenuImage(menu[random].image);
       } else {
-        setFinalMenu('원하시는 메뉴가 업써용 ㅜ오늘 점심은,,😭');
+        setFinalMenu('다시해보자!');
+        setMenuImage(nope);
       }
     }, []);
   } else {
