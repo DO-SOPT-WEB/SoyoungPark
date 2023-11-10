@@ -173,14 +173,9 @@ const ResultPage = (props) => {
       );
     });
     useEffect(() => {
-      if (menu.length > 0) {
-        const random = Math.floor(Math.random() * menu.length);
-        setFinalMenu(menu[random].name);
-        setMenuImage(menu[random].image);
-      } else {
-        setFinalMenu('다시해보자!');
-        setMenuImage(nope);
-      }
+      const random = Math.floor(Math.random() * menu.length);
+      setFinalMenu(menu[random].name);
+      setMenuImage(menu[random].image);
     }, []);
   } else {
     useEffect(() => {
