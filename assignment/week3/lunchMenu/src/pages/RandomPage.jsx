@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import ResultPage from './ResultPage';
 import RecommendStartPage from './RecommendStartPage';
+import styled from 'styled-components';
 
 const RandomPage = (props) => {
   const [time, setTime] = useState(3);
@@ -13,7 +14,7 @@ const RandomPage = (props) => {
   return (
     <>
       {time ? (
-        <h1>{time}</h1>
+        <Style.CountDown>{time}</Style.CountDown>
       ) : step === 0 ? (
         <RecommendStartPage category={props.category} />
       ) : (
@@ -21,6 +22,15 @@ const RandomPage = (props) => {
       )}
     </>
   );
+};
+
+const Style = {
+  CountDown: styled.p`
+    font-size: 5rem;
+    color: ${({ theme }) => theme.colors.white};
+    filter: drop-shadow(0 0 2px ${({ theme }) => theme.colors.ochre})
+      drop-shadow(0 0 5px ${({ theme }) => theme.colors.ochre});
+  `,
 };
 
 export default RandomPage;
