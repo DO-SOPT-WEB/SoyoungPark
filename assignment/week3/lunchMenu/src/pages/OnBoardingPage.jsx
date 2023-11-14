@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import Header from '../components/Header';
 import SelectCategory from '../components/SelectCategory';
 import RecommendStartPage from './RecommendStartPage';
 const OnBoardingPage = () => {
@@ -7,13 +8,27 @@ const OnBoardingPage = () => {
   const [startRecommend, setStartRecommend] = useState(false);
 
   return (
-    <Style.Container>
+    <>
       {category ? (
-        <RecommendStartPage category={category} startRecommend={startRecommend} setStartRecommend={setStartRecommend} />
+        <>
+          <Header category={category} setCategory={setCategory} />
+          <Style.Container>
+            <RecommendStartPage
+              category={category}
+              startRecommend={startRecommend}
+              setStartRecommend={setStartRecommend}
+            />
+          </Style.Container>
+        </>
       ) : (
-        <SelectCategory setCategory={setCategory} />
+        <>
+          <Header />
+          <Style.Container>
+            <SelectCategory setCategory={setCategory} />
+          </Style.Container>
+        </>
       )}
-    </Style.Container>
+    </>
   );
 };
 

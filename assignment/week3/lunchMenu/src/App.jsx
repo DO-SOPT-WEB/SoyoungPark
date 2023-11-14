@@ -9,7 +9,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Styled>
-        <Header />
         <OnBoardingPage />
       </Styled>
     </ThemeProvider>
