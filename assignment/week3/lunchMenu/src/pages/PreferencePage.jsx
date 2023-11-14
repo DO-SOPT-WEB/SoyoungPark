@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import Step from '../components/Step';
 import RecommendStartPage from './RecommendStartPage';
 import ResultPage from './ResultPage';
 const Preference = (props) => {
-  const [step, setStep] = useState(1);
+  const [step, dispatch] = useReducer(reducer, 1);
   const [select, setSelect] = useState(false);
   const [options, setOption] = useState({
     country: '',
@@ -12,12 +12,22 @@ const Preference = (props) => {
     soup: '',
   });
 
+  function reducer(step, action) {
+    switch (action.type) {
+      case 'PREV_PAGE':
+        return step - 1;
+      case 'NEXT_PAGE':
+        return step + 1;
+      case 'START':
+        return 0;
+    }
+  }
   const nextStep = () => {
-    setStep(step + 1);
+    dispatch({ type: 'NEXT_PAGE' });
     setSelect(false);
   };
   const prevStep = () => {
-    setStep(step - 1);
+    dispatch({ type: 'PREV_PAGE' });
     setSelect(true);
   };
   return (
@@ -92,7 +102,7 @@ const Preference = (props) => {
       ) : null}
       {step == 4 ? (
         <>
-          <ResultPage options={options} category={props.category} setStep={setStep} />
+          <ResultPage options={options} category={props.category} dispatch={dispatch} />
         </>
       ) : null}
     </Style.Container>

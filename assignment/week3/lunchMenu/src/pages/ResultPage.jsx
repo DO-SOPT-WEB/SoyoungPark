@@ -163,7 +163,7 @@ const ResultPage = (props) => {
   const [finalmenu, setFinalMenu] = useState('');
   const [menuImage, setMenuImage] = useState('');
   const reset = () => {
-    props.setStep(0);
+    props.category === '취향대로 추천' ? props.dispatch({ type: 'START' }) : props.setStep(0);
   };
 
   if (props.category === '취향대로 추천') {
