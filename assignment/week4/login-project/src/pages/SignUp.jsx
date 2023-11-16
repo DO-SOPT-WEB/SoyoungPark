@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 const SignUp = () => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     id: '',
     password: '',
@@ -41,6 +42,24 @@ const SignUp = () => {
       : setInactive(true);
   };
 
+  const signUpBtnClick = () => {
+    const API = `http://3.39.54.196/api/v1/members`;
+    axios
+      .post(
+        API,
+        {
+          username: userData.id,
+          password: userData.password,
+          nickname: userData.nickname,
+        },
+        { headers: { 'Content-Type': 'application/json' } }
+      )
+      .then((response) => {
+        alert('회원가입 성공');
+        navigate('/login');
+      });
+  };
+
   return (
     <>
       <Header>Sign up</Header>
@@ -55,11 +74,9 @@ const SignUp = () => {
         <Input placeholder="비밀번호를 다시 한 번 입력해주세요." onChange={handleUserData} name="confirmPW" />
         <Input placeholder="닉네임을 입력해주세요." onChange={handleUserData} name="nickname" />
       </InputWrapper>
-      <Link to="/login">
-        <Button type="button" disabled={inactive}>
-          회원가입
-        </Button>
-      </Link>
+      <Button type="button" onClick={signUpBtnClick} disabled={inactive}>
+        회원가입
+      </Button>
     </>
   );
 };
