@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 const SignUp = () => {
   const [userData, setUserData] = useState({
@@ -10,17 +10,18 @@ const SignUp = () => {
     nickname: '',
   });
   const [check, setCheck] = useState({
-    checkID: '체크전',
+    checkID: 'uncheck',
   });
 
-  const API = `http://3.39.54.196/api/v1/members/check?username=${userData.id}`;
+  const [inactive, setInactive] = useState(true);
 
   const handleUserData = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
-    setCheck({ ...check, checkID: '체크전' });
+    name === 'id' ? setCheck({ ...check, checkID: 'uncheck' }) : null;
   };
   const isExist = () => {
+    const API = `http://3.39.54.196/api/v1/members/check?username=${userData.id}`;
     axios
       .get(API)
       .then((response) => {
@@ -30,6 +31,16 @@ const SignUp = () => {
         console.error('Error checking username:', error);
       });
   };
+  useEffect(() => {
+    handleButton();
+  }, [check.checkID, userData]);
+
+  const handleButton = () => {
+    Object.values(userData).every((value) => value !== '') && check.checkID === true
+      ? setInactive(false)
+      : setInactive(true);
+  };
+
   return (
     <>
       <Header>Sign up</Header>
@@ -45,7 +56,9 @@ const SignUp = () => {
         <Input placeholder="닉네임을 입력해주세요." onChange={handleUserData} name="nickname" />
       </InputWrapper>
       <Link to="/login">
-        <Button type="button">회원가입</Button>
+        <Button type="button" disabled={inactive}>
+          회원가입
+        </Button>
       </Link>
     </>
   );
@@ -76,7 +89,7 @@ const IdCheckBtn = styled.button`
   border: none;
   border-radius: 0.3rem;
   background-color: ${({ theme, $checkid }) =>
-    $checkid ? ($checkid === '체크전' ? theme.colors.black : theme.colors.green) : theme.colors.red};
+    $checkid ? ($checkid === 'uncheck' ? theme.colors.black : theme.colors.green) : theme.colors.red};
   color: ${({ theme }) => theme.colors.white};
 `;
 const Button = styled.button`
@@ -84,8 +97,6 @@ const Button = styled.button`
   height: 7vh;
   border: none;
   border-radius: 0.3rem;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.black};
-    color: ${({ theme }) => theme.colors.white};
-  }
+  background-color: ${({ theme, disabled }) => (disabled ? null : theme.colors.black)};
+  color: ${({ theme, disabled }) => (disabled ? null : theme.colors.white)};
 `;
