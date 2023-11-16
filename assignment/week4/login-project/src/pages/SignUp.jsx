@@ -26,16 +26,13 @@ const SignUp = () => {
     const passwordsMatch = userData.password && userData.confirmPW && userData.password === userData.confirmPW;
     setCheck({ ...check, checkPW: passwordsMatch });
   };
-  const isExist = () => {
-    const API = `http://3.39.54.196/api/v1/members/check?username=${userData.id}`;
-    axios
-      .get(API)
-      .then((response) => {
-        response.data.isExist ? setCheck({ ...check, checkID: false }) : setCheck({ ...check, checkID: true });
-      })
-      .catch((error) => {
-        console.error('Error checking username:', error);
-      });
+  const isExist = async () => {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/v1/members/check?username=${userData.id}`);
+      response.data.isExist ? setCheck({ ...check, checkID: false }) : setCheck({ ...check, checkID: true });
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     isPasswordMatch();
@@ -51,22 +48,19 @@ const SignUp = () => {
       : setInactive(true);
   };
 
-  const signUpBtnClick = () => {
-    const API = `http://3.39.54.196/api/v1/members`;
-    axios
-      .post(
-        API,
-        {
-          username: userData.id,
-          password: userData.password,
-          nickname: userData.nickname,
-        },
-        { headers: { 'Content-Type': 'application/json' } }
-      )
-      .then((response) => {
-        alert('회원가입 성공');
-        navigate('/login');
+  const signUpBtnClick = async () => {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/v1/members`, {
+        username: userData.id,
+        password: userData.password,
+        nickname: userData.nickname,
       });
+      alert('회원가입 성공');
+      response && navigate('/login');
+    } catch (error) {
+      alert('회원가입 실패');
+      console.log(error);
+    }
   };
 
   return (
@@ -124,5 +118,5 @@ const Button = styled.button`
   border: none;
   border-radius: 0.3rem;
   background-color: ${({ theme, disabled }) => (disabled ? null : theme.colors.black)};
-  color: ${({ theme, disabled }) => (disabled ? null : theme.colors.white)};
+  color: ${({ theme, disabled }) => (disabled ? theme.colors.deepGray : theme.colors.white)};
 `;
