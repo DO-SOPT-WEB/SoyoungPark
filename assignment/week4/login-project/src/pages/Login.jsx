@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { createPortal } from 'react-dom';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,6 +10,18 @@ const Login = () => {
     username: '',
     password: '',
   });
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setMessage('');
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [message]);
+
   const handleUserData = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
@@ -27,8 +40,7 @@ const Login = () => {
         alert('아이디와 비밀번호를 입력해주세요');
       }
     } catch (error) {
-      alert('로그인 실패');
-      console.log(error);
+      setMessage(error.response.data.message);
     }
   };
 
@@ -47,6 +59,7 @@ const Login = () => {
           <Button type="button">회원가입</Button>
         </Link>
       </ButtonWrapper>
+      {message ? createPortal(<ToastMessage>{message}</ToastMessage>, document.getElementById('toast')) : null}
     </>
   );
 };
@@ -81,4 +94,18 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
   }
+`;
+const ToastMessage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 3rem;
+  width: 30vw;
+  top: 4rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
+  border-radius: 0.6rem;
 `;
