@@ -12,6 +12,7 @@ const SignUp = () => {
   });
   const [check, setCheck] = useState({
     checkID: 'uncheck',
+    checkPW: false,
   });
 
   const [inactive, setInactive] = useState(true);
@@ -20,6 +21,10 @@ const SignUp = () => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
     name === 'id' ? setCheck({ ...check, checkID: 'uncheck' }) : null;
+  };
+  const isPasswordMatch = () => {
+    const passwordsMatch = userData.password && userData.confirmPW && userData.password === userData.confirmPW;
+    setCheck({ ...check, checkPW: passwordsMatch });
   };
   const isExist = () => {
     const API = `http://3.39.54.196/api/v1/members/check?username=${userData.id}`;
@@ -33,11 +38,15 @@ const SignUp = () => {
       });
   };
   useEffect(() => {
+    isPasswordMatch();
+  }, [userData.password, userData.confirmPW]);
+
+  useEffect(() => {
     handleButton();
-  }, [check.checkID, userData]);
+  }, [check, userData]);
 
   const handleButton = () => {
-    Object.values(userData).every((value) => value !== '') && check.checkID === true
+    Object.values(userData).every((value) => value !== '') && check.checkID === true && check.checkPW === true
       ? setInactive(false)
       : setInactive(true);
   };
