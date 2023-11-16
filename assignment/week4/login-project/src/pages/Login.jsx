@@ -19,8 +19,13 @@ const Login = () => {
         username: userData.username,
         password: userData.password,
       });
-      alert('로그인 성공');
-      navigate(`/mypage/${response.data.id}`);
+      // 아이디와 비밀번호 입력 안했을 때도 로그인되는 문제 해결
+      if (userData.username && userData.password) {
+        alert('로그인 성공');
+        navigate(`/mypage/${response.data.id}`);
+      } else {
+        alert('아이디와 비밀번호를 입력해주세요');
+      }
     } catch (error) {
       alert('로그인 실패');
       console.log(error);
