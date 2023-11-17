@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { SIGNUP_NAME, SIGNUP_PLACEHOLDER } from '../constants/inputConstant';
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -67,20 +69,30 @@ const SignUp = () => {
     <>
       <Header>Sign up</Header>
       <InputWrapper>
-        <IdContainer>
-          <Input placeholder="아이디를 입력해주세요." onChange={handleUserData} name="id" autocomplete="off" />
-          <IdCheckBtn onClick={isExist} $checkid={check.checkID}>
-            중복체크
-          </IdCheckBtn>
-        </IdContainer>
-        <Input placeholder="비밀번호를 입력해주세요." onChange={handleUserData} name="password" autocomplete="off" />
-        <Input
-          placeholder="비밀번호를 다시 한 번 입력해주세요."
-          onChange={handleUserData}
-          name="confirmPW"
-          autocomplete="off"
-        />
-        <Input placeholder="닉네임을 입력해주세요." onChange={handleUserData} name="nickname" autocomplete="off" />
+        {SIGNUP_NAME.map((name, index) =>
+          index === 0 ? (
+            <IdContainer key={index}>
+              <Input
+                key={index}
+                name={name}
+                placeholder={SIGNUP_PLACEHOLDER[index]}
+                onChange={handleUserData}
+                autoComplete="off"
+              />
+              <IdCheckBtn onClick={isExist} $checkid={check.checkID}>
+                중복체크
+              </IdCheckBtn>
+            </IdContainer>
+          ) : (
+            <Input
+              key={index}
+              name={name}
+              placeholder={SIGNUP_PLACEHOLDER[index]}
+              onChange={handleUserData}
+              autoComplete="off"
+            />
+          )
+        )}
       </InputWrapper>
       <Button type="button" onClick={signUpBtnClick} disabled={inactive}>
         회원가입
@@ -88,9 +100,6 @@ const SignUp = () => {
     </>
   );
 };
-
-export default SignUp;
-
 const Header = styled.div``;
 const InputWrapper = styled.div`
   display: flex;
@@ -125,3 +134,5 @@ const Button = styled.button`
   background-color: ${({ theme, disabled }) => (disabled ? null : theme.colors.black)};
   color: ${({ theme, disabled }) => (disabled ? theme.colors.deepGray : theme.colors.white)};
 `;
+
+export default SignUp;

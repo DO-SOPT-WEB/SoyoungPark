@@ -3,11 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { createPortal } from 'react-dom';
+import { LOGIN_NAME, LOGIN_PLACEHOLDER } from '../constants/inputConstant';
 
 const Login = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
-    username: '',
+    id: '',
     password: '',
   });
   const [message, setMessage] = useState('');
@@ -29,11 +30,11 @@ const Login = () => {
   const loginBtnClick = async () => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/v1/members/sign-in`, {
-        username: userData.username,
+        username: userData.id,
         password: userData.password,
       });
       // 아이디와 비밀번호 입력 안했을 때도 로그인되는 문제 해결
-      if (userData.username && userData.password) {
+      if (userData.id && userData.password) {
         alert('로그인 성공');
         navigate(`/mypage/${response.data.id}`);
       } else {
@@ -48,18 +49,15 @@ const Login = () => {
     <>
       <Header>Login</Header>
       <InputWrapper>
-        <Input
-          placeholder="아이디를 입력해주세요."
-          name="username"
-          onChange={handleUserData}
-          autocomplete="off"
-        ></Input>
-        <Input
-          placeholder="비밀번호를 입력해주세요."
-          name="password"
-          onChange={handleUserData}
-          autocomplete="off"
-        ></Input>
+        {LOGIN_NAME.map((name, index) => (
+          <Input
+            key={index}
+            name={name}
+            placeholder={LOGIN_PLACEHOLDER[index]}
+            onChange={handleUserData}
+            autoComplete="off"
+          />
+        ))}
       </InputWrapper>
       <ButtonWrapper>
         <Button type="button" onClick={loginBtnClick}>
