@@ -68,14 +68,19 @@ const SignUp = () => {
       <Header>Sign up</Header>
       <InputWrapper>
         <IdContainer>
-          <Input placeholder="아이디를 입력해주세요." onChange={handleUserData} name="id" />
+          <Input placeholder="아이디를 입력해주세요." onChange={handleUserData} name="id" autocomplete="off" />
           <IdCheckBtn onClick={isExist} $checkid={check.checkID}>
             중복체크
           </IdCheckBtn>
         </IdContainer>
-        <Input placeholder="비밀번호를 입력해주세요." onChange={handleUserData} name="password" />
-        <Input placeholder="비밀번호를 다시 한 번 입력해주세요." onChange={handleUserData} name="confirmPW" />
-        <Input placeholder="닉네임을 입력해주세요." onChange={handleUserData} name="nickname" />
+        <Input placeholder="비밀번호를 입력해주세요." onChange={handleUserData} name="password" autocomplete="off" />
+        <Input
+          placeholder="비밀번호를 다시 한 번 입력해주세요."
+          onChange={handleUserData}
+          name="confirmPW"
+          autocomplete="off"
+        />
+        <Input placeholder="닉네임을 입력해주세요." onChange={handleUserData} name="nickname" autocomplete="off" />
       </InputWrapper>
       <Button type="button" onClick={signUpBtnClick} disabled={inactive}>
         회원가입

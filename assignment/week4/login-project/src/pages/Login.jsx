@@ -48,8 +48,18 @@ const Login = () => {
     <>
       <Header>Login</Header>
       <InputWrapper>
-        <Input placeholder="아이디를 입력해주세요." name="username" onChange={handleUserData}></Input>
-        <Input placeholder="비밀번호를 입력해주세요." name="password" onChange={handleUserData}></Input>
+        <Input
+          placeholder="아이디를 입력해주세요."
+          name="username"
+          onChange={handleUserData}
+          autocomplete="off"
+        ></Input>
+        <Input
+          placeholder="비밀번호를 입력해주세요."
+          name="password"
+          onChange={handleUserData}
+          autocomplete="off"
+        ></Input>
       </InputWrapper>
       <ButtonWrapper>
         <Button type="button" onClick={loginBtnClick}>
