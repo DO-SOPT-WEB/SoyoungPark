@@ -6,19 +6,15 @@ document.addEventListener('scroll', () => {
   topBtn.style.opacity = scrollPosition / scrollMax;
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  createButton();
-});
+createButton();
 
 function createButton() {
   const hover_content = document.querySelectorAll('.hover_content');
-  const hover_info = document.querySelector('.hover_info');
 
   hover_content.forEach((item) => {
     if (item.innerHTML.length > 75) {
       const more_button = document.createElement('button');
       more_button.className = 'btn';
-      more_button.id = 'open';
       more_button.textContent = '더보기';
       more_button.addEventListener('click', (event) => seeMore(event));
 
@@ -32,12 +28,12 @@ function seeMore(e) {
   e.target.style.display = 'none';
 }
 
-function leftScroll(e) {
+function leftScroll() {
   const preview_container = document.getElementById('preview_container');
   preview_container.scrollLeft = 0;
 }
 
-function rightScroll(e) {
+function rightScroll() {
   const preview_container = document.getElementById('preview_container');
   preview_container.scrollLeft = preview_container.scrollWidth;
 }
