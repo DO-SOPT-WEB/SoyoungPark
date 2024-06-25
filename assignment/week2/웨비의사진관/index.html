@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <title>소영's 호주 여행기</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h2>소영's 호주 여행기</h2>
+        <i class="fa-solid fa-plane"></i>
+      </header>
+
+      <section class="preview">
+        <i class="fa-solid fa-chevron-left" id="scroll_left" onclick="leftScroll(this)"></i>
+        <div id="preview_container">
+          <img src="images/sydney20.jpg" class="image" />
+          <img src="images/sydney4.jpg" class="image" />
+          <img src="images/sydney11.jpg" class="image" />
+          <img src="images/newcastle1.jpg" class="image" />
+          <img src="images/sydney5.jpg" class="image" />
+          <img src="images/sydney13.jpg" class="image" />
+          <img src="images/sydney14.jpg" class="image" />
+          <img src="images/melbourne3.jpg" class="image" />
+          <img src="images/sydney16.jpg" class="image" />
+        </div>
+        <i class="fa-solid fa-chevron-right" id="scroll_right" onclick="rightScroll(this)"></i>
+      </section>
+
+      <nav>
+        <ul class="city_list">
+          <li><a href="#first" class="city">sydney</a></li>
+          <li><a href="#second" class="city">melbourne</a></li>
+          <li><a href="#third" class="city">newcastle</a></li>
+        </ul>
+      </nav>
+
+      <section id="first">
+        <div class="chapter_container">
+          <h3 class="chapter">sydney</h3>
+        </div>
+        <div id="first_images">
+          <div class="img_hover_container">
+            <img src="images/sydney1.JPEG" />
+            <div class="hover_info">
+              <p class="hover_title">공중부양</p>
+              <p class="hover_content">
+                하버브릿지인 것 같지만 <br />사실은 블루마운틴 엉망진창 점프샷을 김민근씨가 합성하심
+              </p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney10.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">나셉이랑 천문대</p>
+              <p class="hover_content">노을이 넘 예뻤던..<br />시드니 한 눈에 담기 성공</p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney23.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">인생 맛집</p>
+              <p class="hover_content">
+                마르게리따 진짜 미친맛<br />
+                또 먹을래
+              </p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney3.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">퀸 빅토리아 빌딩</p>
+              <p class="hover_content">
+                이곳은 쇼핑의 성지 🛍️<br />
+                눈 돌아간다.
+              </p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney6.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">블루마운틴</p>
+              <p class="hover_content">무섭긴한데 사진은 찍어야함 🥶</p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney12.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">오페라 하우스</p>
+              <p class="hover_content">매일 밤 우리의 산책로 🌌<br />낮에 봐도 밤에 봐도 이뻐어</p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney30.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">아이스버그</p>
+              <p class="hover_content">여기서 수영 안한 똥멍청이<br />우리야</p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney31.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">본다이비치</p>
+              <p class="hover_content">거의 본다이비치에서 산 우리<br />여기 파도 못잊어..🌊</p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney16.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">시드니대 탐방</p>
+              <p class="hover_content">학교 구경은 한 번 해야지</p>
+            </div>
+          </div>
+          <div class="img_hover_container">
+            <img src="images/sydney24.jpg" />
+            <div class="hover_info">
+              <p class="hover_title">p 그 자체였던 날</p>
+              <p class="hover_content">
+                감상하려고 갔는데..<br />바다만 보면 냅다 뛰어들어버려(옷도 안챙겨와서 이 날 감기 걸림)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="second">
+        <div class="chapter_container">
+          <h3 class="chapter">melbourne</h3>
+        </div>
+        <div id="second_images">
+          <div id="group1">
+            <div id="f_item1" class="img_move"></div>
+          </div>
+
+          <div id="group2">
+            <div id="f_item2" class="img_move"></div>
+            <div id="f_item3" class="img_move"></div>
+            <div id="f_item4" class="img_move"></div>
+            <div id="f_item5" class="img_move"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="third">
+        <div class="chapter_container">
+          <h3 class="chapter">newcastle</h3>
+        </div>
+        <div id="third_images">
+          <div id="g_item1"></div>
+          <div id="g_item2"></div>
+          <div id="g_item3"></div>
+          <div id="g_item4"></div>
+          <div id="g_item5"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>같이 여행갈 사람 ~~ ? ✋🏻</p>
+        <a href="#container"><span id="top_btn" class="material-symbols-outlined">arrow_circle_up</span></a>
+      </footer>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
