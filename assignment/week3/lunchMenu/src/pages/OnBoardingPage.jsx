@@ -9,25 +9,18 @@ const OnBoardingPage = () => {
 
   return (
     <>
-      {category ? (
-        <>
-          <Header category={category} setCategory={setCategory} />
-          <Style.Container>
-            <RecommendStartPage
-              category={category}
-              startRecommend={startRecommend}
-              setStartRecommend={setStartRecommend}
-            />
-          </Style.Container>
-        </>
-      ) : (
-        <>
-          <Header />
-          <Style.Container>
-            <SelectCategory setCategory={setCategory} />
-          </Style.Container>
-        </>
-      )}
+      <Header category={category} setCategory={setCategory} />
+      <Style.Container>
+        {category ? (
+          <RecommendStartPage
+            category={category}
+            startRecommend={startRecommend}
+            setStartRecommend={setStartRecommend}
+          />
+        ) : (
+          <SelectCategory setCategory={setCategory} />
+        )}
+      </Style.Container>
     </>
   );
 };
